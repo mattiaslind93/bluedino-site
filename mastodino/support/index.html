@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#faf9f6" />
+    <meta name="description" content="MastoDino Support: help, translation, data and personalization, and hashtags FAQ for MastoDino on iPhone and iPad." />
+    <link rel="icon" href="../../assets/blue-dino-logo.png" type="image/png" />
+    <title>MastoDino Support · Blue Dino</title>
+    <style>
+      @font-face {
+        font-family: 'Quicksand';
+        src: url('../../fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+        font-style: normal;
+        font-weight: 300 700;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Slackey';
+        src: url('../../fonts/Slackey-Regular.ttf') format('truetype');
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Shadows Into Light';
+        src: url('../../fonts/ShadowsIntoLight-Regular.ttf') format('truetype');
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+      }
+      :root {
+        font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+        color: #252626;
+        background: #faf9f6;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        --ink: #252626;
+        --body: #595b5a;
+        --muted: #6d706c;
+        --blue: #326786;
+        --link: #183b68;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #faf9f6; color: var(--ink); }
+      a { color: var(--link); text-underline-offset: 4px; text-decoration-thickness: 1px; transition: color 160ms ease; }
+      a:hover { color: var(--blue); }
+      ::selection { background: #dce8ed; color: var(--ink); }
+      :focus-visible { outline: 2px solid var(--blue); outline-offset: 6px; border-radius: 2px; }
+
+      .page {
+        display: flex;
+        flex-direction: column;
+        min-height: 100svh;
+        max-width: 1720px;
+        margin-inline: auto;
+        padding: 46px clamp(28px, 5.7vw, 100px) 36px;
+      }
+      .site-header,
+      .site-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        flex: none;
+      }
+      .brand { display: inline-flex; padding-block: 4px; }
+      .brand img { display: block; width: 112px; height: auto; }
+      .studio-label { color: var(--muted); font-size: 12px; letter-spacing: .015em; }
+
+      .support-content {
+        width: min(100%, 720px);
+        margin: 64px auto 84px;
+        flex: 1;
+      }
+      h1 {
+        margin: 0 0 24px;
+        font-family: 'Slackey', sans-serif;
+        font-size: clamp(32px, 3.1vw, 44px);
+        font-weight: 400;
+        line-height: 1.14;
+        letter-spacing: -.03em;
+      }
+      h2 {
+        margin: 44px 0 14px;
+        font-size: clamp(20px, 2.2vw, 24px);
+        font-weight: 650;
+        line-height: 1.3;
+        letter-spacing: -.02em;
+        color: var(--ink);
+      }
+      p, li {
+        color: var(--body);
+        font-size: 16px;
+        font-weight: 450;
+        line-height: 1.8;
+      }
+      p { margin: 0 0 18px; }
+      ul {
+        margin: 0 0 20px;
+        padding-left: 22px;
+      }
+      li { margin-bottom: 10px; }
+      strong { color: var(--ink); font-weight: 650; }
+      .contact-link {
+        font-family: 'Shadows Into Light', cursive;
+        color: #183b68;
+        display: inline-block;
+        margin: 4px 0 12px;
+        padding-block: 6px;
+        font-size: 22px;
+        font-weight: 400;
+        text-underline-offset: 6px;
+      }
+      .more-links {
+        margin-top: 12px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .site-footer {
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.6;
+      }
+      @media (max-width: 620px) {
+        .page { padding: 26px 28px 24px; }
+        .brand img { width: 98px; }
+        .studio-label { font-size: 10px; }
+        .support-content { margin: 38px auto 56px; }
+        h1 { font-size: 32px; margin-bottom: 20px; }
+        h2 { margin-top: 34px; font-size: 20px; }
+        p, li { font-size: 15px; line-height: 1.78; }
+        .contact-link { font-size: 21px; }
+        .site-footer { font-size: 10px; gap: 14px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <a class="brand" href="../../" aria-label="Blue Dino">
+          <img src="../../assets/blue-dino-logo.png" width="112" height="40" alt="Blue Dino" />
+        </a>
+        <span class="studio-label">MastoDino Support</span>
+      </header>
+
+      <main class="support-content">
+        <h1>MastoDino Support</h1>
+        <p>MastoDino is a free fediverse app for iPhone and iPad, made by me, Mattias Lind, at Blue Dino in Sweden. If something isn't working or you have an idea, email me at <a href="mailto:contact@bluedino.se">contact@bluedino.se</a> and I'll get back to you. It helps if you include your iPhone or iPad model, your Mastodon server and what you were doing when it happened.</p>
+        <p><a class="contact-link" href="mailto:contact@bluedino.se">contact@bluedino.se</a></p>
+
+        <h2>Translation</h2>
+        <p>Translation runs on your device with Apple's Translation, so nothing is sent to a server. Under Settings, Languages you pick your languages under My languages. You can choose from Swedish, English, German, French, Spanish, Italian, Japanese, Finnish, Norwegian, Danish, Dutch and Portuguese, and the first one is the language posts get translated into. Under Other languages you choose Show all languages, Hide other languages or Auto-translate. You can also tap Translate on a single post. Which language pairs work depends on what Apple's Translation supports, and the language pack has to be downloaded on your device (Settings, Apps, Translate). If it's missing, MastoDino tells you which one to download.</p>
+
+        <h2>Your data and personalization</h2>
+        <p>MastoDino has no server and no account with us, so there's nothing stored about you on our side. Your posts, likes, follows and bookmarks live on your Mastodon server, like with any app.</p>
+        <p>The personalization lives only on your device:</p>
+        <ul>
+          <li>Local AI curated (off by default) builds an encrypted interest profile on your device. To delete it, go to Settings, Feeds, Personalization and tap Reset local AI profile. You can also just turn the feature off.</li>
+          <li>Logging out (Settings, Account, Log out) removes your sign-in, the cached feed and the link to your account.</li>
+          <li>Deleting the app removes the app's data from your device.</li>
+        </ul>
+
+        <h2>Hashtags FAQ</h2>
+        <p><strong>Where did the hashtags go?</strong> Hashtags at the end of a post are hidden by default to keep the feed calm. Hashtags inside a sentence always show.</p>
+        <p><strong>How do I get them back?</strong> Turn on Show trailing hashtags under Settings, Content &amp; media.</p>
+        <p><strong>Can I still search and follow hashtags?</strong> Yes. Use the Hashtags tab in Search, and tap Follow on a hashtag page.</p>
+        <p><strong>Does hiding them affect my own posts?</strong> No. Your hashtags are posted as you wrote them. Hiding only changes how posts look in MastoDino.</p>
+
+        <h2>More</h2>
+        <p>MastoDino is made by Blue Dino. Mastodon is a trademark of Mastodon gGmbH. Not affiliated.</p>
+        <p class="more-links"><a href="https://rentry.co/mastodino-privacy-policy" rel="noopener noreferrer">Privacy Policy</a> · <a href="../../">bluedino.se</a></p>
+      </main>
+
+      <footer class="site-footer">
+        <span>© 2026 Blue Dino</span>
+        <span>Små detaljer. Stora världar.</span>
+      </footer>
+    </div>
+  </body>
+</html>
