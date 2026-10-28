@@ -209,28 +209,112 @@ trackTabs.forEach((tab, index) =>
 );
 keyboardTabs(trackTabs, selectTrack);
 
+const groceryLayout = window.matchMedia("(max-width: 700px)");
+function updateGroceryOrientation() {
+  document.querySelectorAll(".grocery-tabs").forEach((tablist) => {
+    tablist.setAttribute(
+      "aria-orientation",
+      groceryLayout.matches ? "vertical" : "horizontal",
+    );
+  });
+}
+groceryLayout.addEventListener("change", updateGroceryOrientation);
+let selectedGroceryLevel = 0;
+let groceryWidgetCount = 0;
+function selectGroceryLevel(index) {
+  selectedGroceryLevel = index;
+  document.querySelectorAll("[data-grocery-widget]").forEach((widget) => {
+    widget.querySelectorAll("[data-grocery-tab]").forEach((tab, i) => {
+      const selected = i === index;
+      tab.setAttribute("aria-selected", String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+    });
+    widget.querySelectorAll("[data-grocery-panel]").forEach((panel, i) => {
+      panel.hidden = i !== index;
+    });
+  });
+}
+function initGroceryWidgets(root) {
+  root.querySelectorAll("[data-grocery-widget]").forEach((widget) => {
+    if (widget.dataset.initialized) return;
+    widget.append(
+      document.getElementById("grocery-steps-template").content.cloneNode(true),
+    );
+    widget.dataset.initialized = "true";
+    const prefix = `grocery-${++groceryWidgetCount}`;
+    const tabs = [...widget.querySelectorAll("[data-grocery-tab]")];
+    const panels = [...widget.querySelectorAll("[data-grocery-panel]")];
+    tabs.forEach((tab, i) => {
+      tab.id = `${prefix}-tab-${i}`;
+      panels[i].id = `${prefix}-panel-${i}`;
+      tab.setAttribute("aria-controls", panels[i].id);
+      panels[i].setAttribute("aria-labelledby", tab.id);
+      tab.addEventListener("click", () => selectGroceryLevel(i));
+    });
+    keyboardTabs(tabs, selectGroceryLevel, () =>
+      widget.querySelector(".grocery-tabs").getAttribute("aria-orientation"),
+    );
+  });
+  updateGroceryOrientation();
+  selectGroceryLevel(selectedGroceryLevel);
+}
+initGroceryWidgets(document);
+
 const articles = [
   {
     title: "Så byggde jag min egen morgontidning som levereras kl. 06:00",
+    image: "img/blog-morgontidning.jpg",
+    imageAlt: "En lugn morgon med tidning och kaffe på köksbordet",
+    caption: "06:00 • DIN EGEN MORGONTIDNING",
+    imageWidth: 1152,
+    imageHeight: 864,
     meta: "VARDAGSAUTOMATIK · 24 OKT 2026 · 6 MIN LÄSNING",
     body: '<p class="article-intro">Tänk dig att öppna ett enda mejl och få precis så mycket omvärld som du faktiskt vill ha. Varken mer eller mindre.</p><p class="article-disclosure">Exempelartikel: ett möjligt upplägg att prova. Titeln illustrerar Vardagslabbets format och beskriver inte ett dokumenterat genomfört projekt.</p><h3>Börja med det du vill veta</h3><p>Det svåraste är inte att koppla ihop verktygen. Det är att välja bort. Skriv ned tre ämnen du bryr dig om. Kanske din bransch, något lokalt och ett intresse som inte har det minsta med jobbet att göra.</p><p>Välj sedan några källor du redan litar på. En lugn morgontidning behöver inte söka igenom hela internet. Den behöver hjälpa dig förstå vad som ändrats sedan igår.</p><h3>Ge redaktören en tydlig ram</h3><p>En bra instruktion kan vara: ”Sammanfatta högst fem nyheter från mina valda källor. Berätta vad som hänt, varför det spelar roll och länka till originalet. Om inget viktigt har hänt, skriv det. Hitta inte på något för att fylla plats.”</p><p>Be också om publiceringsdatum och låt verktyget markera osäkra uppgifter. En länk gör det lättare att gå vidare när något faktiskt väcker din nyfikenhet.</p><h3>Sätt väckarklockan på 06:00</h3><p>Använd en tjänst som stöder schemalagda uppgifter och den leverans du vill ha. En automatisering som skickar mejl behöver en godkänd mejlkoppling. Börja med att köra den manuellt och kontrollera resultatet innan du schemalägger.</p><h3>Låt tystnaden vara ett alternativ</h3><p>Lägg in en rad i instruktionen: ”Om ingen nyhet passerar ribban, leverera ett kort allt-är-lugnt-meddelande.” Att verktyget kan arbeta varje morgon betyder inte att det måste fylla den med information.</p><p>Testa i en vecka. Behåller du lugnet? Bra. Börjar brevet kännas som ännu en att-göra-punkt? Minska till två gånger i veckan. Tidningen jobbar för dig.</p>',
   },
   {
     title:
       "Digital butler i praktiken: Från 280 röriga påminnelser till totalt lugn",
+    image: "img/blog-butler-paminnelser.jpg",
+    imageAlt:
+      "Anteckningsbok, penna och nycklar på ett varmt upplyst skrivbord",
+    caption: "KODACHROME 64 • DIGITALT LUGN",
+    imageWidth: 1152,
+    imageHeight: 864,
     meta: "DIGITALT LUGN · 18 OKT 2026 · 5 MIN LÄSNING",
     body: '<p class="article-intro">En lång lista är ofta ett lager av gamla ambitioner, lösa idéer och några få saker som faktiskt behöver göras.</p><p class="article-disclosure">Exempelartikel: siffran 280 är ett illustrativt scenario, inte ett uppmätt kundresultat.</p><h3>Samla utan att lösa</h3><p>Börja med att samla alla påminnelser på ett ställe. Rensa bort privata detaljer innan du delar med en molntjänst, eller använd ett lokalt verktyg. Du behöver inte organisera materialet först. Det är precis det du ber om hjälp med.</p><p>Be AI hitta dubbletter, otydliga formuleringar och sådant som verkar inaktuellt. Be den fråga när den inte förstår. Den ska aldrig radera något på egen hand.</p><h3>Tre högar räcker långt</h3><p>Be om ett förslag till tre grupper: ”behöver göras”, ”vill göra” och ”kan släppa”. Gå sedan igenom förslaget själv. AI vet inte vad som är viktigt i ditt liv bara för att den kan sortera en lista.</p><p>Nästa instruktion: ”Hjälp mig välja tre rimliga saker för idag. Föreslå ett första steg för varje, som tar högst tio minuter.”</p><h3>Låt butlern påminna, inte bestämma</h3><p>När du valt din plan kan du lägga in den i din befintliga påminnelseapp. Om en agent ska göra det behöver den rätt koppling och ditt godkännande. Kontrollera datum och återkommande uppgifter innan du sparar.</p><p>Det viktiga är inte att tömma hela listan. Det är att kunna lägga ifrån sig den och veta vad nästa lilla steg är.</p>',
   },
   {
     title:
       "Veckans AI utan FOMO: Det enda du faktiskt behöver bry dig om just nu",
+    image: "img/spar-vardag.jpg",
+    imageAlt: "Ett solbelyst skrivbord med böcker och växter",
+    caption: "KODACHROME 64 • LÅT DET VARA LAGOM",
+    imageWidth: 1200,
+    imageHeight: 675,
     meta: "LAGOM MYCKET AI · 12 OKT 2026 · 3 MIN LÄSNING",
     body: '<p class="article-intro">Du behöver inte läsa ikapp hela AI-internet. Börja med det som stör dig en helt vanlig tisdag.</p><p class="article-disclosure">Exempelartikel med tidlösa arbetssätt. Detta är ingen aktuell nyhetsöversikt.</p><h3>Veckans enda fråga</h3><p>”Vad gör jag om och om igen som jag gärna skulle få lite hjälp med?” Stanna där en stund. Ett återkommande mejl? Middagsplaneringen? Att få struktur på spretiga anteckningar?</p><p>Välj den minsta uppgiften som kommer tillbaka minst en gång i veckan. Det är ofta en bättre början än att försöka automatisera hela livet på lördag.</p><h3>Prova samma sak tre gånger</h3><p>Välj ett verktyg med gratisnivå och prova uppgiften tre gånger. Beskriv vad ett bra resultat innebär. Ge ett avpersonifierat exempel. Berätta vad du vill ändra i svaret.</p><p>Första gången blir det kanske ganska generiskt. Andra gången har du lärt dig vad du behöver säga. Tredje gången kan du bedöma om det sparar tid eller bara flyttar runt arbetet.</p><h3>Du får nöja dig</h3><p>Om en enda bra rutin gör vardagen enklare har du redan fått ut något. Du behöver inte byta verktyg för att en ny modell dyker upp. Lägg den energin på något du faktiskt längtar efter.</p><p>Och om AI inte hjälpte just här? Då har du också lärt dig något användbart. Ta en kaffe och låt resten av internet fortsätta springa.</p>',
   },
   {
     title: "Experiment: Kan en kalender skjuta skumpilar när man snoozar?",
+    image: "img/blog-nerf-kalender.jpg",
+    imageAlt: "Ett lekfullt skrivbordsexperiment med kalender och skumpilar",
+    caption: "KODACHROME 64 • HELGLABBET",
+    imageWidth: 1152,
+    imageHeight: 864,
     meta: "HELGLABBET · 5 OKT 2026 · 4 MIN LÄSNING",
     body: '<p class="article-intro">Vissa idéer börjar med ett problem. Andra börjar med ”det här vore ganska roligt”. Den här hör till den andra sorten.</p><p class="article-disclosure">Idéskiss för ett lekfullt helgprojekt. Ingen hårdvara är ansluten till webbplatsen, och experimentet beskrivs inte som genomfört.</p><h3>Ett fokusblock med personlighet</h3><p>Tänk dig ett kalenderblock märkt ”skriv klart”. Du snoozar det. En liten figur på skrivbordet lyfter på huvudet och frågar om det verkligen var planen. I den överdrivna versionen kommer en skumpil mot en tom måltavla.</p><p>Skämtet är att ge en annars osynlig händelse en fysisk reaktion. Tekniken ska vara rolig att leva med, inte bestraffa dig för att dagen ändrar riktning.</p><h3>Börja med lampan</h3><p>Första prototypen behöver varken motor eller avfyrning. Låt ett testblock i kalendern tända en lampa eller spela ett mjukt ljud. Använd en kalenderkoppling med begränsad behörighet och testa med påhittade händelser.</p><p>Vill du ta idén vidare till en fysisk leksak behövs en säker konstruktion, en tydlig avstängning och en tom, avskärmad måltavla. Rikta aldrig mot människor eller djur. Helglabbet fungerar precis lika bra med en liten flagga.</p><h3>Eller hälsa på Microduck</h3><p>En vänligare variant är en Microduck-skrivbordsrobot som läser upp dagens tre viktigaste punkter vid morgonkaffet. Kalendern står för underlaget, en godkänd rösttjänst för talet och du för urvalet.</p><p>Det kanske inte är det snabbaste sättet att läsa en lista. Men allt behöver inte optimeras. Ibland får man bygga något bara för att det gör en glad.</p>',
+  },
+  {
+    title:
+      "Säg bara 'Handla mat' – Så automatiserar du veckohandlingen i 3 enkla steg",
+    meta: "VARDAGSAUTOMATIK · 28 OKT 2026 · 8 MIN LÄSNING",
+    image: "img/blog-willys-mat.jpg",
+    imageAlt:
+      "En matkasse med grönsaker, bröd och mjölk bredvid telefonens inköpslista",
+    caption: "KODACHROME 64 • FRÅN LISTA TILL MIDDAG",
+    imageWidth: 1152,
+    imageHeight: 864,
+    body: document.getElementById("grocery-article-template").innerHTML,
   },
 ];
 const articleDialog = document.getElementById("article-dialog");
@@ -249,7 +333,15 @@ document.querySelectorAll("[data-article]").forEach((button) =>
     const article = articles[Number(button.dataset.article)];
     document.getElementById("article-dialog-meta").textContent = article.meta;
     document.getElementById("article-dialog-title").textContent = article.title;
+    const image = document.getElementById("article-dialog-image");
+    image.src = article.image;
+    image.alt = article.imageAlt;
+    image.width = article.imageWidth;
+    image.height = article.imageHeight;
+    document.getElementById("article-dialog-caption").textContent =
+      article.caption;
     document.getElementById("article-dialog-body").innerHTML = article.body;
+    initGroceryWidgets(document.getElementById("article-dialog-body"));
     openDialog(articleDialog, button);
   }),
 );
