@@ -340,6 +340,27 @@ nav > a[aria-current]::after {
   margin-top: 13px;
   line-height: 1.8;
 }
+.hero-promise {
+  margin-top: 22px;
+  padding: 20px 22px;
+  background: var(--paper-deep);
+  border-left: 3px solid var(--sage);
+  border-radius: 0 12px 12px 0;
+}
+.hero-promise h2 {
+  color: var(--sage-dark);
+  font-size: 25px;
+  line-height: 1.2;
+}
+.hero-promise p {
+  margin-top: 9px;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.hero-promise strong {
+  color: var(--sage-dark);
+}
 .hero-actions {
   display: flex;
   align-items: center;
