@@ -506,250 +506,165 @@
         </div>
       </section>
       <section id="verktyg" class="tools-section">
-        <div class="container">
+        <section
+          id="vad-ar-ai"
+          class="container"
+          aria-labelledby="ai-choice-heading"
+        >
           <div class="chapter-heading reveal">
             <span class="chapter-number">02</span>
             <div>
-              <span class="eyebrow">DEL 2 · VERKTYGSLÅDAN</span>
-              <h2>En hjälpreda.<br /><em>Färre måsten.</em></h2>
-              <p>
-                Välj efter jobbet du vill slippa.<br />Här är fem sätt att få
-                hjälp i bakgrunden.
-              </p>
+              <span class="eyebrow">DEL 2 · VÄLJ UTAN STRESS</span>
+              <h2 id="ai-choice-heading">
+                Vilken tjänst<br /><em>ska man välja?</em>
+              </h2>
+              <p>Det beror på vad du vill göra. Vi tar det lugnt.</p>
             </div>
             <svg class="tools-leaf" aria-hidden="true">
               <use href="#leaf" />
             </svg>
           </div>
-          <div class="filter-row">
-            <div class="filters" role="group" aria-label="Filtrera verktyg">
-              <button
-                class="filter active"
-                data-filter="alla"
-                aria-pressed="true"
+          <div class="provider-intro">
+            <p class="provider-reassurance">
+              <strong
+                >För vanlig enkel användning spelar det knappt någon roll vilken
+                av de vanliga chattarna du väljer.</strong
               >
-                Alla verktyg <span>5</span></button
-              ><button class="filter" data-filter="gratis" aria-pressed="false">
-                Gratis</button
-              ><button class="filter" data-filter="agent" aria-pressed="false">
-                Gör jobbet</button
-              ><button
-                class="filter"
-                data-filter="skrivande"
-                aria-pressed="false"
-              >
-                Mejl &amp; dokument</button
-              ><button class="filter" data-filter="privat" aria-pressed="false">
-                På din dator
-              </button>
-            </div>
-            <span class="filter-hint"
-              >Prova en uppgift. Se om du får tid över.</span
-            >
+            </p>
+            <p>
+              ChatGPT, Gemini, Claude och Grok har i grunden nästan exakt samma
+              funktioner idag: röstläge, kamera, bildtolkning, webbsök, dokument
+              och text. Släpp stressen över att ”välja fel”. Börja med den du
+              trivs med. Du kan alltid byta senare.
+            </p>
           </div>
-          <div class="tools-grid">
-            <article class="tool-card" data-tags="gratis agent skrivande">
-              <div class="tool-card-top">
-                <span class="tool-logo claude-logo" aria-hidden="true">✳</span
-                ><span class="tool-badge">ORDNING PÅ FILERNA</span>
-              </div>
-              <h3>Claude</h3>
-              <p class="tool-intro">
-                Sorterar filer och gör sammanställningar.
-              </p>
-              <dl>
-                <dt>Kan sköta åt dig</dt>
-                <dd>
-                  Kan med Cowork sortera filer och sammanfatta dokument på ett
-                  schema.
-                </dd>
-                <dt>Pris</dt>
-                <dd>Gratisnivå. Cowork kräver betalplan.</dd>
-                <dt>Du slipper</dt>
-                <dd>
-                  Läsa igenom och sammanställa samma sorts dokument varje vecka.
-                </dd>
-              </dl>
-              <div class="tool-choice">
-                <span class="eyebrow">VÄLJ NÄR …</span>
-                <p>
-                  … du vill få veckans dokument genomgångna och samlade i en
-                  kort rapport.
+          <div class="provider-guide" aria-labelledby="provider-guide-heading">
+            <h3 id="provider-guide-heading">
+              Tre val är allt du behöver känna till.
+            </h3>
+            <p class="provider-guide-intro">
+              Vill du ta nästa steg? Utgå från vad du vill göra, så blir valet
+              enklare.
+            </p>
+            <ol class="provider-grid tools-grid" role="list">
+              <li class="tool-card recommended-card">
+                <div class="tool-card-top">
+                  <span class="tool-logo grok-logo" aria-hidden="true">𝕏</span>
+                  <span class="tool-badge">REKOMMENDERAD START</span>
+                </div>
+                <h4>1. Grok Bot</h4>
+                <p class="provider-purpose">
+                  Lättast och mest kapabel i vardagen just nu.
                 </p>
-              </div>
-              <a
-                class="text-link"
-                href="https://claude.com/pricing"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Utforska Claude <span aria-hidden="true">↗</span></a
-              >
-            </article>
-            <article class="tool-card" data-tags="gratis agent">
-              <div class="tool-card-top">
-                <span class="tool-logo grok-logo" aria-hidden="true">𝕏</span
-                ><span class="tool-badge">KOLL UTAN ATT LETA</span>
-              </div>
-              <h3>Grok <span class="tool-subtitle">/ Grok Bot</span></h3>
-              <p class="tool-intro">Bevakar det du vill hålla koll på.</p>
-              <dl>
-                <dt>Kan sköta åt dig</dt>
-                <dd>
-                  Kan följa valda ämnen och skicka en sammanfattning på bestämda
-                  tider.
-                </dd>
-                <dt>Pris</dt>
-                <dd>Gratisnivå. Grok Bot ingår i vissa betalplaner.</dd>
-                <dt>Du slipper</dt>
-                <dd>Leta efter uppdateringar på flera olika ställen.</dd>
-              </dl>
-              <div class="tool-choice">
-                <span class="eyebrow">VÄLJ NÄR …</span>
-                <p>
-                  … du vill ha ett morgonbrev eller få hjälp när ett viktigt
-                  mejl kommer.
+                <p class="tool-intro">
+                  För dig som vill få saker <em>gjorda</em> automatiskt i
+                  bakgrunden. Med en egen dator och rätt kopplingar kan butlern
+                  sköta schemalagda rutiner med mejl, kalender och påminnelser.
                 </p>
-              </div>
-              <a
-                class="text-link"
-                href="https://x.ai/pricing"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Utforska Grok <span aria-hidden="true">↗</span></a
-              >
-            </article>
-            <article class="tool-card" data-tags="gratis agent skrivande">
-              <div class="tool-card-top">
-                <span class="tool-logo chatgpt-logo" aria-hidden="true">❋</span
-                ><span class="tool-badge">HJÄLP MED VARDAGEN</span>
-              </div>
-              <h3>ChatGPT</h3>
-              <p class="tool-intro">Sköter återkommande uppgifter åt dig.</p>
-              <dl>
-                <dt>Kan sköta åt dig</dt>
-                <dd>
-                  Kan bevaka mejl, ge påminnelser och förbereda dagens översikt
-                  automatiskt.
-                </dd>
-                <dt>Pris</dt>
-                <dd>Gratisnivå. Mer kapacitet med betalplan.</dd>
-                <dt>Du slipper</dt>
-                <dd>Komma ihåg att starta samma uppgift igen.</dd>
-              </dl>
-              <div class="tool-choice">
-                <span class="eyebrow">VÄLJ NÄR …</span>
-                <p>
-                  … du vill att samma uppgift blir gjord varje dag utan att du
-                  behöver komma ihåg den.
+                <p class="tool-intro">
+                  Låt den hjälpa till att handla mat eller ordna en
+                  morgontidning på skrivaren. Här går AI från en chattflik till
+                  en riktig digital butler.
                 </p>
-              </div>
-              <a
-                class="text-link"
-                href="https://chatgpt.com/pricing/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Utforska ChatGPT <span aria-hidden="true">↗</span></a
-              >
-            </article>
-            <article class="tool-card" data-tags="gratis agent skrivande">
-              <div class="tool-card-top">
-                <span class="tool-logo gemini-logo" aria-hidden="true">✦</span
-                ><span class="tool-badge">GOOGLE-VÄNNEN</span>
-              </div>
-              <h3>Gemini</h3>
-              <p class="tool-intro">
-                Samlar det viktiga från mejl och kalender.
-              </p>
-              <dl>
-                <dt>Kan sköta åt dig</dt>
-                <dd>
-                  Kan varje morgon samla olästa mejl och dagens möten i en kort
-                  översikt.
-                </dd>
-                <dt>Pris</dt>
-                <dd>Gratisnivå. Utökade funktioner med betalplan.</dd>
-                <dt>Du slipper</dt>
-                <dd>Öppna varje mejltråd för att få koll på dagen.</dd>
-              </dl>
-              <div class="tool-choice">
-                <span class="eyebrow">VÄLJ NÄR …</span>
-                <p>
-                  … du använder Gmail och Google Kalender och vill slippa gå
-                  igenom allt själv.
+                <div class="tool-choice">
+                  <span class="eyebrow">BÖRJA LAGOM</span>
+                  <p>
+                    Koppla in en sak du gärna slipper göra. Låt rutinen rulla
+                    när du gör annat.
+                  </p>
+                </div>
+                <a class="text-link" href="#spar">
+                  Hitta din första rutin
+                  <svg aria-hidden="true"><use href="#arrow" /></svg>
+                </a>
+              </li>
+              <li class="tool-card">
+                <div class="tool-card-top">
+                  <span class="tool-logo claude-logo" aria-hidden="true"
+                    >✳</span
+                  >
+                  <span class="tool-badge">FÖR DIG SOM BYGGER</span>
+                </div>
+                <h4>
+                  2. Claude <span class="tool-subtitle">(eller Codex)</span>
+                </h4>
+                <p class="provider-purpose">
+                  Om du programmerar och bygger kod.
                 </p>
-              </div>
-              <a
-                class="text-link"
-                href="https://gemini.google/subscriptions/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Utforska Gemini <span aria-hidden="true">↗</span></a
-              >
-            </article>
-            <article
-              class="tool-card local-card"
-              data-tags="gratis privat skrivande"
-            >
-              <div class="tool-card-top">
-                <span class="tool-logo local-logo" aria-hidden="true">⌘</span
-                ><span class="tool-badge">HEMMA HOS DIG</span>
-              </div>
-              <h3>
-                Lokal AI <span class="tool-subtitle">/ På din dator</span>
-              </h3>
-              <p class="tool-intro">Gör jobbet på din egen dator.</p>
-              <dl>
-                <dt>Kan sköta åt dig</dt>
-                <dd>
-                  Kan läsa och sammanfatta dokument utan att innehållet lämnar
-                  datorn.
-                </dd>
-                <dt>Pris</dt>
-                <dd>
-                  Många går att använda gratis. Du behöver en dator som klarar
-                  jobbet.
-                </dd>
-                <dt>Du slipper</dt>
-                <dd>
-                  Läsa hela dokument för att hitta det viktigaste. Automatiska
-                  jobb kräver en separat rutin.
-                </dd>
-              </dl>
-              <div class="tool-choice">
-                <span class="eyebrow">VÄLJ NÄR …</span>
-                <p>
-                  … du vill bearbeta privata filer på din egen dator, till
-                  exempel med LM Studio.
+                <p class="tool-intro">
+                  Är ditt huvudfokus att skriva kod, bygga appar eller felsöka
+                  tekniska projekt? Då är Claude och specialiserade kodagenter
+                  som Codex ofta de vassaste verktygen att sitta och bygga med.
                 </p>
-              </div>
-              <a
-                class="text-link"
-                href="https://lmstudio.ai/docs/app/offline"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Läs om lokal AI <span aria-hidden="true">↗</span></a
-              >
-            </article>
-            <aside class="tool-tip">
-              <svg aria-hidden="true"><use href="#dino" /></svg
-              ><span class="eyebrow">LABBETS LILLA RÅD</span>
-              <h3>Den bästa hjälpen<br />är ett jobb <em>mindre.</em></h3>
-              <p>
-                Låt en hjälpreda sköta en återkommande uppgift i en vecka. Får
-                du mer tid över? Då hjälper den.
-              </p>
-              <a class="text-link" href="#spar"
-                >Välj ett jobb att slippa
-                <svg aria-hidden="true"><use href="#arrow" /></svg
-              ></a>
-            </aside>
+                <p class="tool-intro">
+                  Beskriv vad du vill skapa, prova tillsammans och justera längs
+                  vägen. Du får hjälp från första idé till fungerande kod.
+                </p>
+                <div class="tool-choice">
+                  <span class="eyebrow">BÖRJA LAGOM</span>
+                  <p>
+                    Välj ett litet projekt eller en bugg. Bygg, testa och lär
+                    dig en bit i taget.
+                  </p>
+                </div>
+                <a
+                  class="text-link"
+                  href="https://claude.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Utforska Claude <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+              <li class="tool-card local-card">
+                <div class="tool-card-top">
+                  <span class="tool-logo local-logo" aria-hidden="true">⌘</span>
+                  <span class="tool-badge">SPION-LÄGET</span>
+                </div>
+                <h4>
+                  3. Lokal AI <span class="tool-subtitle">på egen dator</span>
+                </h4>
+                <p class="provider-purpose">Om du vill köra helt off-grid.</p>
+                <p class="tool-intro">
+                  Vill du att absolut ingenting lämnar ditt eget skrivbord? Kör
+                  öppna modeller lokalt på din egen dator, utan koppling till
+                  molntjänster. När modellen är nedladdad kan du använda den
+                  utan internet, även i sommarstugan.
+                </p>
+                <p class="tool-intro">
+                  Lite mer pyssel och en dator som orkar krävs. Belöningen? Helt
+                  privat, med 100 % ”off-grid spion”-känsla. Solglasögon är
+                  förstås valfria.
+                </p>
+                <div class="tool-choice">
+                  <span class="eyebrow">BÖRJA LAGOM</span>
+                  <p>
+                    Prova en lokal modell i till exempel LM Studio. Låt dina
+                    texter stanna hemma hos dig.
+                  </p>
+                </div>
+                <a
+                  class="text-link"
+                  href="https://lmstudio.ai/docs/app/offline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Läs om lokal AI <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            </ol>
           </div>
-          <p class="tools-note" aria-live="polite" id="filter-status">
-            Visar 5 verktyg. Automatisk hjälp kan kräva betalplan och kopplingar
-            till dina appar. Du väljer vad tjänsten får komma åt. Stödet
-            varierar mellan konton och länder. Läs mer hos varje tjänst.
-          </p>
-        </div>
+          <div class="chapter-bottom">
+            <span
+              >Du behöver inte lära dig allt. En hjälpreda räcker som
+              start.</span
+            >
+            <a class="text-link" href="#spar">
+              Välj ett jobb att slippa
+              <svg aria-hidden="true"><use href="#arrow" /></svg>
+            </a>
+          </div>
+        </section>
       </section>
       <section id="spar" class="chapter container">
         <div class="chapter-heading reveal">

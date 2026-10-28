@@ -165,31 +165,6 @@ function updateSchoolOrientation() {
 updateSchoolOrientation();
 schoolLayout.addEventListener("change", updateSchoolOrientation);
 
-const filterButtons = [...document.querySelectorAll("[data-filter]")];
-const toolCards = [...document.querySelectorAll(".tool-card")];
-filterButtons.forEach((button) =>
-  button.addEventListener("click", () => {
-    const filter = button.dataset.filter;
-    filterButtons.forEach((other) => {
-      const selected = other === button;
-      other.classList.toggle("active", selected);
-      other.setAttribute("aria-pressed", String(selected));
-    });
-    let count = 0;
-    toolCards.forEach((card) => {
-      const visible =
-        filter === "alla" || card.dataset.tags.split(" ").includes(filter);
-      card.hidden = !visible;
-      if (visible) {
-        count++;
-        animatePanel(card);
-      }
-    });
-    document.getElementById("filter-status").textContent =
-      `Visar ${count} verktyg${filter === "alla" ? "" : ` i kategorin ${button.textContent.trim()}`}. ${filter === "gratis" ? "Gratis gäller en begränsad nivå eller AI på din egen dator. " : ""}Automatisk hjälp kan kräva betalplan och kopplingar till dina appar. Du väljer vad tjänsten får komma åt. Stödet varierar mellan konton och länder. Läs mer hos varje tjänst.`;
-  }),
-);
-
 const trackTabs = [...document.querySelectorAll("[data-track]")];
 function selectTrack(index) {
   trackTabs.forEach((tab, i) => {

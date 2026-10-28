@@ -1015,6 +1015,82 @@ input:focus-visible + .switch {
   margin-top: 20px;
   max-width: 900px;
 }
+.provider-intro {
+  max-width: 780px;
+  margin-bottom: 40px;
+}
+.provider-intro p {
+  font-size: 14px;
+  line-height: 1.85;
+}
+.provider-intro .provider-reassurance {
+  margin-bottom: 14px;
+  color: var(--sage-dark);
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.6;
+}
+.provider-guide > h3 {
+  font-size: clamp(28px, 3vw, 36px);
+}
+.provider-guide-intro {
+  margin-block: 12px 24px;
+  font-size: 14px;
+}
+.provider-grid {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.provider-grid > .tool-card {
+  min-width: 0;
+}
+.provider-grid .recommended-card {
+  border-color: var(--sage);
+  background: #f0f2e8;
+}
+.provider-grid .tool-card-top {
+  flex-wrap: wrap;
+  min-height: 38px;
+}
+.provider-grid .tool-badge {
+  font-size: 8px;
+}
+.provider-grid h4 {
+  font-size: 33px;
+}
+.provider-grid .tool-subtitle {
+  display: block;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+.provider-purpose {
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sage-dark);
+}
+.provider-grid .tool-intro,
+.provider-grid .tool-choice p {
+  font-size: 13px;
+  line-height: 1.85;
+}
+.provider-grid .tool-choice {
+  margin-top: 24px;
+}
+.provider-grid .tool-card > .text-link {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 0;
+  font-size: 12px;
+}
+@media (max-width: 700px) {
+  .provider-grid.tools-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .provider-grid > .tool-card {
+    padding: 25px;
+  }
+}
 .handwritten {
   font-family: var(--serif);
   font-style: italic;
