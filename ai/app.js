@@ -312,6 +312,56 @@ const articles = [
     imageHeight: 864,
     body: document.getElementById("grocery-article-template").innerHTML,
   },
+  {
+    title:
+      "När proppen går i hallen: Visa proppskåpet med kameran och få hjälp direkt",
+    image: "img/blog-proppskap.jpg",
+    imageAlt:
+      "Ett proppskåp med porslinsproppar visas för en röstagent via mobilkameran",
+    caption: "KODACHROME 64 • LIVE RÖST & VIDEO",
+    imageWidth: 1152,
+    imageHeight: 864,
+    meta: "LIVE RÖST & VIDEO · 28 OKT 2026 · 4 MIN LÄSNING",
+    body: `<p class="article-intro">Plötsligt blir det mörkt i köket eller hallen. Med en live röstagent som kan se genom mobilkameran kan du visa proppskåpet och få hjälp att läsa märkningen, förstå nästa steg och hitta rätt reservpropp.</p>
+      <p class="article-disclosure">Exempel på ett möjligt upplägg. Det kräver en tjänst med live röst och video. För butikssökningen behövs även tillgång till aktuella butikssidor eller lageruppgifter.</p>
+      <h3>Steg 1: Slå på kameran och visa proppskåpet</h3>
+      <p>Öppna röstläget i en tjänst som stöder live-video och slå på kameran. Stå stadigt med bra belysning och visa först hela proppskåpet. Säg: ”Strömmen har gått i hallen. Kan du hjälpa mig att se vilken propp jag ska kontrollera?”</p>
+      <p>Rikta sedan kameran mot porslinspropparnas små fönster. Agenten kan hjälpa dig att upptäcka en propp där signalpärlan, det lilla ögat, har lossnat. Visa också gruppförteckningen så att ni kan jämföra med köket eller hallen. En kamerabild eller signalpärla räcker inte för en säker bedömning. Är bilden eller märkningen oklar, stanna och be om hjälp på plats.</p>
+      <h3>Steg 2: Bryt strömmen och läs märkningen tillsammans</h3>
+      <p>Be agenten ta ett moment i taget med rösten. Stäng av apparaterna i den berörda gruppen och slå av huvudströmbrytaren innan du skruvar ur propphuven. Med torra händer skruvar du försiktigt ur den hela, oskadade propphuven och tar ut säkringen. Håll i huven och rör aldrig kontakterna inne i skåpet. Huvudströmbrytaren gör inte alla delar av skåpet spänningslösa.</p>
+      <p>Visa säkringen nära kameran och läs själv upp texten. Agenten hjälper dig att jämföra färgmarkering och ampere-tal: exempelvis röd 10A eller grå 16A. Läs även typ och eventuell märkning för trög säkring. Passkontakten i sockeln begränsar vilken säkring som passar; låt den sitta orörd och använd aldrig högre ampere-tal. Kameran kan hjälpa till att tolka synlig märkning, men du behöver inte röra eller ta loss passkontakten.</p>
+      <p>Byt bara en vanlig användaråtkomlig proppsäkring om du vet hur det ska göras och propphuven är hel. Vid sprickor, bränd lukt, missfärgning eller osäkerhet avbryter du och kontaktar en elektriker.</p>
+      <h3>Steg 3: Hitta rätt reservpropp i en butik nära dig</h3>
+      <p>Är reservlådan tom? Visa proppen i handen och säg: ”Hjälp mig hitta samma typ nära mig, till exempel Diazed 10A trög. Vilken butik har öppet och har den på hyllan?” Ange ort eller ungefärlig plats. Låt agenten jämföra typ, storlek, ampere-tal och märkning med butikens produktuppgifter.</p>
+      <p>Med tillgång till aktuella uppgifter kan agenten söka hos exempelvis Clas Ohlson, Jula, Biltema eller matbutiken runt hörnet. Be om närmaste öppna butik, exakt produkt, adress, öppettider och källa till lagersaldot. Saknas aktuellt lagersaldo behöver butiken bekräfta det, exempelvis per telefon, innan du åker.</p>
+      <p>När du har rätt ersättare och huvudströmbrytaren fortfarande är av sätter du säkringen i den hela propphuven och skruvar tillbaka den försiktigt. Slå på huvudströmbrytaren och därefter apparaterna en i taget. Går den nya proppen direkt igen, sluta byta och låt en elektriker undersöka orsaken.</p>`,
+  },
+  {
+    title:
+      "Låt butlern bevaka lokala jobb och förbereda personliga brev åt dig",
+    image: "img/blog-jobb-bevakning.jpg",
+    imageAlt:
+      "Jobbevakning och ett utkast till personligt brev på ett skrivbord",
+    caption: "KODACHROME 64 • AUTOMATISK JOBBSPANING",
+    imageWidth: 1152,
+    imageHeight: 864,
+    meta: "AUTOMATISK JOBBSPANING · 28 OKT 2026 · 4 MIN LÄSNING",
+    body: `<p class="article-intro">Du behöver inte skrolla platsannonser varje kväll. En digital butler kan bevaka jobb nära dig, välja ut de få som passar och förbereda personliga brev som låter som du. Varje morgon väntar ett litet urval att ta ställning till.</p>
+      <p class="article-disclosure">Exempel på en automatisk rutin. Du behöver en agent med schemalagda körningar och tillgång till valda annonskällor och dina dokument. Ingen jobbevakning är ansluten till den här sidan.</p>
+      <h3>Steg 1: Beskriv jobbet du faktiskt vill göra</h3>
+      <p>Börja med platsen: din stad eller högst tre mil från där du bor. Lägg till vad som passar din vardag, till exempel deltid, dagtid, en viss restid eller möjlighet att arbeta hemifrån. Sätt sedan ord på uppgifterna du gillar och det du redan kan.</p>
+      <p>En instruktion kan vara: ”Bevaka jobb inom tre mil från min stad där jag får hjälpa kunder, planera och lösa praktiska problem. Jag har erfarenhet av butik och administration och vill arbeta dagtid.” Då kan butlern hitta relevanta roller även när arbetsgivaren använder en annan jobbtitel.</p>
+      <p>Välj vilka annonskällor den ska läsa, till exempel sparade jobbevakningar, annonsflöden och lokala arbetsgivares karriärsidor. Ge den ditt aktuella CV och ett par tidigare texter som du själv har skrivit. Bestäm en morgontid och var du vill få resultatet, till exempel i en egen mapp med en kort sammanställning.</p>
+      <h3>Steg 2: Låt butlern sålla varje morgon</h3>
+      <p>Schemalägg rutinen en gång, exempelvis till klockan 07 varje vardag. Agenten läser nya annonser i bakgrunden, tar bort dubbletter och sådant du redan har sett och jämför arbetsuppgifter, ort och villkor med dina önskemål.</p>
+      <p>Be den skilja på verkliga grundkrav och sådant arbetsgivaren beskriver som meriterande. En lång kravlista behöver inte utesluta ett jobb, men ett obligatoriskt körkort eller en behörighet som du saknar ska framgå tydligt. Välj högst tre starka träffar per morgon och låt den säga till när inget passar.</p>
+      <p>För varje träff får du annonslänk, arbetsgivare, plats, sista ansökningsdag och en kort förklaring till varför jobbet passar. Eventuella luckor i din erfarenhet följer med så att du kan bedöma dem själv.</p>
+      <h3>Steg 3: Få ett brevutkast i din egen ton</h3>
+      <p>För varje utvald tjänst läser agenten annonsen och företagets egen webbplats. Den kopplar konkreta arbetsuppgifter till erfarenheter i ditt CV och använder dina tidigare texter för att hitta din ton, dina vanliga ord och hur kort eller personligt du brukar skriva.</p>
+      <p>Ge en tydlig instruktion: ”Skriv ett kort utkast i min stil. Använd två konkreta exempel från mitt CV som passar tjänsten. Undvik klyschor och hitta inte på erfarenheter eller intresse för företaget. Markera sådant du behöver fråga mig om.” Då bygger brevet på det du faktiskt har gjort.</p>
+      <p>Låt butlern spara ett separat utkast per tjänst, tillsammans med annonslänken och en kort lista över det du behöver kontrollera. Läs igenom, rätta fakta och finputsa formuleringarna tills brevet känns som ditt. Du väljer vilka jobb du vill söka och skickar ansökan själv.</p>
+      <p>Efter den första veckan kan du berätta vilka träffar som var bra och vilka du valde bort. Justera avstånd, arbetsuppgifter och urval. Nästa morgon fortsätter samma rutin med en tydligare bild av vad du söker.</p>`,
+  },
 ];
 const articleDialog = document.getElementById("article-dialog");
 const bookingDialog = document.getElementById("booking-dialog");
