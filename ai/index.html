@@ -1,0 +1,1594 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#FBF9F5" />
+    <meta
+      name="description"
+      content="AI för en enklare vardag – utan FOMO. Lär dig grunderna, hitta ditt verktyg och få mer tid till det som faktiskt betyder något."
+    />
+    <title>Lugna Labbet — AI för en enklare vardag, av BlueDino</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%235E7A68'/%3E%3Ctext x='10' y='48' font-size='44'%3E🦕%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <svg
+      class="svg-library"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <defs>
+        <symbol id="dino" viewBox="0 0 120 120">
+          <path
+            d="M34 85C17 90 9 78 9 66c10 10 15 7 19 4l12-13 5-22C49 9 77 8 88 23c6 8 4 16 4 23 16 0 20 6 17 14-2 7-14 9-25 9l-2 18 8 13H66l-5-12-7 12H31Z"
+            fill="#7E9A81"
+            stroke="#233D34"
+            stroke-width="2.3"
+            stroke-linejoin="round"
+          />
+          <path
+            d="m43 35-9-6 2 15-9 0 5 13-9 3 7 10"
+            fill="#D6B77D"
+            stroke="#233D34"
+            stroke-width="2"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M43 70c3 5 21 7 37-1l5 25-15 5-10-11-8 11-19-4Z"
+            fill="#FBF9F5"
+            stroke="#233D34"
+            stroke-width="2"
+          />
+          <path
+            d="m58 73 4 9 7-11M62 82v12M47 84l7 1M73 82l6-2"
+            fill="none"
+            stroke="#233D34"
+            stroke-width="1.8"
+          />
+          <path
+            d="m76 81 14-5 4 5-17 9"
+            fill="#7E9A81"
+            stroke="#233D34"
+            stroke-width="2"
+          />
+          <path
+            d="M67 58q7 7 16 1"
+            fill="none"
+            stroke="#233D34"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <g fill="#FBF9F5" stroke="#233D34" stroke-width="2.5">
+            <circle cx="65" cy="43" r="10" />
+            <circle cx="87" cy="43" r="10" />
+            <path d="M75 42h2M54 40l-7-4" />
+          </g>
+          <g fill="#233D34">
+            <circle cx="68" cy="44" r="2.4" />
+            <circle cx="89" cy="44" r="2.4" />
+          </g>
+          <path
+            d="m56 23 5-2m20 1 5 3"
+            stroke="#233D34"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </symbol>
+        <symbol id="arrow" viewBox="0 0 24 24">
+          <path
+            d="M4 12h15m-6-6 6 6-6 6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </symbol>
+        <symbol id="spark" viewBox="0 0 32 32">
+          <path
+            d="m16 1 3 11 11 4-11 3-3 12-4-12-11-3 11-4Z"
+            fill="currentColor"
+          />
+        </symbol>
+        <symbol id="leaf" viewBox="0 0 120 120">
+          <path
+            d="M60 109C53 66 24 74 16 38 42 32 62 49 61 70 60 36 72 15 103 9c6 39-14 59-42 70"
+            fill="currentColor"
+          />
+          <path
+            d="m60 109 1-30 25-43M60 79 32 49"
+            fill="none"
+            stroke="#FBF9F5"
+            stroke-width="2"
+          />
+        </symbol>
+      </defs>
+    </svg>
+    <a class="skip-link" href="#main">Hoppa till innehållet</a>
+    <header class="site-header">
+      <div class="nav-wrap container">
+        <a class="brand" href="#hem" aria-label="Lugna Labbet, till startsidan"
+          ><svg class="brand-dino" aria-hidden="true"><use href="#dino" /></svg
+          ><span class="wordmark"
+            >Lugna Labbet<span class="brand-by"
+              >av <strong>BlueDino</strong></span
+            ></span
+          ></a
+        >
+        <button
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span>Meny</span><span class="menu-lines" aria-hidden="true"></span>
+        </button>
+        <nav id="main-nav" aria-label="Huvudmeny">
+          <a href="#grundskolan">Grundskolan</a
+          ><a href="#verktyg">Verktygslådan</a
+          ><a href="#spar">Hitta ditt spår</a><a href="#blogg">Vardagslabbet</a
+          ><a class="button button-small button-dark" href="#nyhetsbrev"
+            >Lite lugn i inkorgen
+            <svg aria-hidden="true"><use href="#arrow" /></svg
+          ></a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section id="hem" class="hero container">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="status-dot"></span> NYFIKEN PÅ AI. LUGN I SJÄLEN.
+          </div>
+          <h1>
+            Mer tid för livet.<br />Mindre <em>måsten.</em
+            ><svg class="heading-spark" aria-hidden="true">
+              <use href="#spark" />
+            </svg>
+          </h1>
+          <p class="hero-tagline">AI för en enklare vardag – utan FOMO.</p>
+          <p class="hero-description">
+            Mindre skärmtid, noll FOMO-stress. Lär dig grunderna i din egen takt
+            och bygg en enklare vardag.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-terra" href="#grundskolan"
+              >Börja från början
+              <svg aria-hidden="true"><use href="#arrow" /></svg></a
+            ><span class="small-note"
+              >Inga förkunskaper.<br />Inget att hinna ikapp.</span
+            >
+          </div>
+          <div class="hero-art">
+            <svg
+              viewBox="0 0 560 205"
+              role="img"
+              aria-label="En glad dinosaurieprofessor tar kaffepaus bland böljande kullar och växter"
+            >
+              <path
+                d="M6 189C74 166 113 178 169 152c66-31 113-17 161 5 62 29 119-5 218 27"
+                fill="#E9EADC"
+              />
+              <path
+                d="M11 189c69 0 93-17 151-11s109 18 166 8 134-18 220 4"
+                fill="none"
+                stroke="#9AA78A"
+                stroke-width="1.6"
+              />
+              <circle cx="417" cy="51" r="25" fill="#E9B580" />
+              <path
+                d="M417 14v-8m33 26 8-4m-13 43 8 4m-61-51-6-6"
+                stroke="#D7A16C"
+                stroke-width="1.7"
+                stroke-linecap="round"
+              />
+              <path
+                d="M79 179c6-46 10-78-2-115m7 79c-29-4-43-19-44-40 26-1 43 12 44 40m0-23c26-6 40-21 36-43-24 6-36 20-36 43"
+                fill="#6F8768"
+              />
+              <path
+                d="M78 181c6-43 7-68-1-103m6 65-27-26m28 2 24-27"
+                stroke="#445E4E"
+                stroke-width="1.5"
+                fill="none"
+              />
+              <path
+                d="M464 181c-3-19 0-38 14-55m-14 36c-22-2-29-12-30-24 18-3 29 8 30 24m3-10c1-24 16-38 33-36-1 22-14 34-33 36"
+                fill="#B0B68C"
+              />
+              <use href="#dino" x="185" y="38" width="151" height="151" />
+              <path
+                d="m291 127 35 3-3 32-34-3Z"
+                fill="#D97757"
+                stroke="#714B3D"
+                stroke-width="1.6"
+              />
+              <path
+                d="M326 136c21-2 18 20-2 17m-28-39c-5-7 7-9 2-16m12 19c-5-7 6-9 2-15"
+                fill="none"
+                stroke="#714B3D"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+              <path
+                d="m152 83 14-6m-12 18 11-1m177-39c12-12 28-9 34-1"
+                fill="none"
+                stroke="#8E9B79"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <text
+                x="347"
+                y="100"
+                fill="#6D7463"
+                font-family="Newsreader, Georgia, serif"
+                font-size="17"
+                font-style="italic"
+                transform="rotate(-6 347 100)"
+              >
+                Tekniken jobbar.
+              </text>
+              <text
+                x="354"
+                y="122"
+                fill="#6D7463"
+                font-family="Newsreader, Georgia, serif"
+                font-size="17"
+                font-style="italic"
+                transform="rotate(-6 354 122)"
+              >
+                Du tar en kaffe.
+              </text>
+            </svg>
+          </div>
+        </div>
+        <div class="calculator" aria-labelledby="calculator-heading">
+          <div class="calculator-top">
+            <span class="eyebrow">ETT LITET TANKEEXPERIMENT</span
+            ><svg class="tiny-spark" aria-hidden="true">
+              <use href="#spark" />
+            </svg>
+          </div>
+          <h2 id="calculator-heading">
+            Vad skulle du göra<br /><em>med lite mer tid?</em>
+          </h2>
+          <p>
+            Hur mycket tid kan du vinna tillbaka varje dag – utan att vara
+            teknisk? Välj dina vardagstjuvar.
+          </p>
+          <fieldset class="time-options">
+            <legend class="sr-only">
+              Välj sysslor för att uppskatta din tidsvinst
+            </legend>
+            <label class="time-option"
+              ><span class="option-icon" aria-hidden="true">✉</span
+              ><span class="option-text"
+                ><strong>Mejl &amp; inkorg</strong
+                ><small>Enkelt · 15 min att sätta upp</small></span
+              ><span class="minutes">15 <small>min/dag</small></span
+              ><input type="checkbox" data-minutes="15" checked /><span
+                class="switch"
+                aria-hidden="true"
+              ></span
+            ></label>
+            <label class="time-option"
+              ><span class="option-icon" aria-hidden="true">▦</span
+              ><span class="option-text"
+                ><strong>Kalender &amp; möteskrockar</strong
+                ><small>Lite pill · 30 min att sätta upp</small></span
+              ><span class="minutes">10 <small>min/dag</small></span
+              ><input type="checkbox" data-minutes="10" checked /><span
+                class="switch"
+                aria-hidden="true"
+              ></span
+            ></label>
+            <label class="time-option"
+              ><span class="option-icon" aria-hidden="true">♧</span
+              ><span class="option-text"
+                ><strong>Mat &amp; inköp</strong
+                ><small>Enkelt · 10 min att sätta upp</small></span
+              ><span class="minutes">15 <small>min/dag</small></span
+              ><input type="checkbox" data-minutes="15" /><span
+                class="switch"
+                aria-hidden="true"
+              ></span
+            ></label>
+            <label class="time-option"
+              ><span class="option-icon" aria-hidden="true">▤</span
+              ><span class="option-text"
+                ><strong>Mötesanteckningar</strong
+                ><small>Enkelt · 15 min att sätta upp</small></span
+              ><span class="minutes">10 <small>min/dag</small></span
+              ><input type="checkbox" data-minutes="10" /><span
+                class="switch"
+                aria-hidden="true"
+              ></span
+            ></label>
+            <label class="time-option"
+              ><span class="option-icon" aria-hidden="true">⌁</span
+              ><span class="option-text"
+                ><strong>Räkningar &amp; admin</strong
+                ><small>Lite pill · 30 min att sätta upp</small></span
+              ><span class="minutes">5 <small>min/dag</small></span
+              ><input type="checkbox" data-minutes="5" /><span
+                class="switch"
+                aria-hidden="true"
+              ></span
+            ></label>
+          </fieldset>
+          <div class="calculator-result">
+            <div>
+              <span class="result-number" id="daily-total">25</span
+              ><span class="result-unit">minuter / dag</span>
+            </div>
+            <span class="result-equals" aria-hidden="true">≈</span>
+            <div>
+              <span class="result-number" id="monthly-total">12,5</span
+              ><span class="result-unit">timmar / månad</span>
+            </div>
+            <svg class="result-flower" aria-hidden="true" viewBox="0 0 50 70">
+              <path
+                d="M25 68V30m0 24L12 43m13 3 12-10"
+                stroke="#63795E"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M25 13c-15-22-30 4-13 11-24 9-2 31 10 15 5 23 31 6 19-7 23-4 7-31-7-20 5-20-20-23-17-4"
+                fill="#D9A46B"
+              />
+              <circle cx="25" cy="24" r="7" fill="#F8E8C8" />
+            </svg>
+          </div>
+          <p class="calculator-footnote">
+            Ett räkneexempel, inget löfte. Räknat på 30 dagar.<br />Din vardag,
+            dina förutsättningar.
+          </p>
+          <span
+            class="sr-only"
+            id="time-announcement"
+            aria-live="polite"
+          ></span>
+        </div>
+      </section>
+      <div class="manifesto container">
+        <span class="eyebrow">LAGOM ÄR OCKSÅ EN SUPERKRAFT</span>
+        <p>
+          Du behöver inte kunna allt om AI.<br />Du behöver bara hitta
+          <em>det som hjälper dig.</em>
+        </p>
+        <svg aria-hidden="true"><use href="#leaf" /></svg>
+      </div>
+      <section id="grundskolan" class="chapter container">
+        <div class="chapter-heading reveal">
+          <span class="chapter-number">01</span>
+          <div>
+            <span class="eyebrow">DEL 1 · GRUNDSKOLAN</span>
+            <h2>Okej, men vad <em>är</em> AI?</h2>
+            <p>Tre minuter. Tre enkla bilder. Inga konstiga förkortningar.</p>
+          </div>
+          <span class="reading-pill">◷ 3 min</span>
+        </div>
+        <p class="school-intro">
+          AI är program som lär sig mönster från exempel. De kan föreslå text,
+          tolka bilder och hjälpa till med uppgifter. De tänker inte som vi –
+          men kan vara riktigt bra att tänka tillsammans med.
+        </p>
+        <div class="school-grid reveal">
+          <div
+            class="school-tabs"
+            role="tablist"
+            aria-label="Tre typer av AI"
+            aria-orientation="vertical"
+          >
+            <button
+              id="school-tab-0"
+              class="school-tab active"
+              role="tab"
+              aria-selected="true"
+              aria-controls="school-panel"
+              data-school="0"
+            >
+              <span class="step-index">1</span
+              ><span
+                ><strong>Samtalspartnern</strong
+                ><small>Chattbotten du kan bolla med</small></span
+              ><span class="tab-arrow" aria-hidden="true">↗</span>
+            </button>
+            <button
+              id="school-tab-1"
+              class="school-tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="school-panel"
+              data-school="1"
+              tabindex="-1"
+            >
+              <span class="step-index">2</span
+              ><span
+                ><strong>Den digitala butlern</strong
+                ><small>Agenten som får saker gjorda</small></span
+              ><span class="tab-arrow" aria-hidden="true">↗</span>
+            </button>
+            <button
+              id="school-tab-2"
+              class="school-tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="school-panel"
+              data-school="2"
+              tabindex="-1"
+            >
+              <span class="step-index">3</span
+              ><span
+                ><strong>Specialisterna &amp; lokal AI</strong
+                ><small>En sak riktigt bra. Ibland helt privat.</small></span
+              ><span class="tab-arrow" aria-hidden="true">↗</span>
+            </button>
+            <div class="school-aside">
+              <svg aria-hidden="true"><use href="#dino" /></svg>
+              <p>
+                ”Tänk hjälpsam kollega.<br />Med lite väl gott självförtroende
+                ibland.”
+              </p>
+            </div>
+          </div>
+          <div
+            class="school-panel"
+            id="school-panel"
+            role="tabpanel"
+            aria-labelledby="school-tab-0"
+            tabindex="0"
+          >
+            <div
+              class="lesson-visual"
+              id="lesson-visual"
+              aria-hidden="true"
+            ></div>
+            <div class="lesson-copy">
+              <span class="eyebrow" id="lesson-label"
+                >DU FRÅGAR. AI FÖRESLÅR.</span
+              >
+              <h3 id="lesson-title">
+                Som att tänka högt.<br />Fast någon svarar.
+              </h3>
+              <p id="lesson-description">
+                Du skriver en fråga, får ett förslag och bollar vidare. Be om en
+                veckomeny, hjälp med ett knepigt mejl eller en enkel förklaring.
+                Du håller i ratten.
+              </p>
+              <div class="lesson-example" id="lesson-example">
+                ”Jag har linser, tomater och 20 minuter. Vad blir det till
+                middag?”
+              </div>
+              <p class="lesson-caveat" id="lesson-caveat">
+                Bra att veta: AI kan låta säker och ändå ha fel. Dubbelkolla det
+                viktiga.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="chapter-bottom">
+          <span
+            >Du behöver inte veta hur motorn fungerar för att ta en
+            provtur.</span
+          ><a class="text-link" href="#verktyg"
+            >Hitta din första hjälpreda
+            <svg aria-hidden="true"><use href="#arrow" /></svg
+          ></a>
+        </div>
+      </section>
+      <section id="verktyg" class="tools-section">
+        <div class="container">
+          <div class="chapter-heading reveal">
+            <span class="chapter-number">02</span>
+            <div>
+              <span class="eyebrow">DEL 2 · VERKTYGSLÅDAN</span>
+              <h2>Rätt verktyg.<br /><em>Inte alla verktyg.</em></h2>
+              <p>
+                Vilka AI-tjänster finns och vilken ska man välja?<br />Här är en
+                lugn genväg genom djungeln.
+              </p>
+            </div>
+            <svg class="tools-leaf" aria-hidden="true">
+              <use href="#leaf" />
+            </svg>
+          </div>
+          <div class="filter-row">
+            <div class="filters" role="group" aria-label="Filtrera verktyg">
+              <button
+                class="filter active"
+                data-filter="alla"
+                aria-pressed="true"
+              >
+                Alla verktyg <span>5</span></button
+              ><button class="filter" data-filter="gratis" aria-pressed="false">
+                Gratis</button
+              ><button class="filter" data-filter="agent" aria-pressed="false">
+                Agent</button
+              ><button
+                class="filter"
+                data-filter="skrivande"
+                aria-pressed="false"
+              >
+                Skrivande</button
+              ><button class="filter" data-filter="privat" aria-pressed="false">
+                Privat
+              </button>
+            </div>
+            <span class="filter-hint">Börja gratis. Känn efter. Välj sen.</span>
+          </div>
+          <div class="tools-grid">
+            <article class="tool-card" data-tags="gratis agent skrivande">
+              <div class="tool-card-top">
+                <span class="tool-logo claude-logo" aria-hidden="true">✳</span
+                ><span class="tool-badge">ORDMÄNNISKANS KOMPIS</span>
+              </div>
+              <h3>Claude</h3>
+              <p class="tool-intro">Den eftertänksamma skrivkompisen.</p>
+              <dl>
+                <dt>Bäst på</dt>
+                <dd>Text, resonemang och att reda ut långa dokument.</dd>
+                <dt>Pris</dt>
+                <dd>Gratisnivå. Betalplaner för mer användning.</dd>
+                <dt>Personlighet</dt>
+                <dd>Lugn, nyanserad och ibland lite väl utförlig.</dd>
+              </dl>
+              <div class="tool-choice">
+                <span class="eyebrow">VÄLJ NÄR …</span>
+                <p>
+                  … du vill få ordning på tankarna och skriva något som låter
+                  som du.
+                </p>
+              </div>
+              <a
+                class="text-link"
+                href="https://claude.com/pricing"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Utforska Claude <span aria-hidden="true">↗</span></a
+              >
+            </article>
+            <article class="tool-card" data-tags="gratis agent">
+              <div class="tool-card-top">
+                <span class="tool-logo grok-logo" aria-hidden="true">𝕏</span
+                ><span class="tool-badge">DEN NYFIKNA REBELLEN</span>
+              </div>
+              <h3>Grok <span class="tool-subtitle">/ Grok Bot</span></h3>
+              <p class="tool-intro">Snabb i tanken. Rak i tonen.</p>
+              <dl>
+                <dt>Bäst på</dt>
+                <dd>Omvärldsspaning och att bolla aktuella frågor.</dd>
+                <dt>Pris</dt>
+                <dd>Gratisnivå. Grok Bot ingår i vissa betalplaner.</dd>
+                <dt>Personlighet</dt>
+                <dd>Direkt, skämtsam och gärna lite kaxig.</dd>
+              </dl>
+              <div class="tool-choice">
+                <span class="eyebrow">VÄLJ NÄR …</span>
+                <p>
+                  … du gillar raka svar. Bot-varianten kan även ta hand om
+                  längre uppgifter.
+                </p>
+              </div>
+              <a
+                class="text-link"
+                href="https://x.ai/pricing"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Utforska Grok <span aria-hidden="true">↗</span></a
+              >
+            </article>
+            <article class="tool-card" data-tags="gratis agent skrivande">
+              <div class="tool-card-top">
+                <span class="tool-logo chatgpt-logo" aria-hidden="true">❋</span
+                ><span class="tool-badge">DEN MÅNGSIDIGA</span>
+              </div>
+              <h3>ChatGPT</h3>
+              <p class="tool-intro">En bra första hållplats för det mesta.</p>
+              <dl>
+                <dt>Bäst på</dt>
+                <dd>Vardagsfrågor, idéer, röst och bild.</dd>
+                <dt>Pris</dt>
+                <dd>Gratisnivå. Mer kapacitet med betalplan.</dd>
+                <dt>Personlighet</dt>
+                <dd>Entusiastisk, hjälpsam och anpassningsbar.</dd>
+              </dl>
+              <div class="tool-choice">
+                <span class="eyebrow">VÄLJ NÄR …</span>
+                <p>
+                  … du vill prova lite av allt utan att börja med fem olika
+                  appar.
+                </p>
+              </div>
+              <a
+                class="text-link"
+                href="https://chatgpt.com/pricing/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Utforska ChatGPT <span aria-hidden="true">↗</span></a
+              >
+            </article>
+            <article class="tool-card" data-tags="gratis agent skrivande">
+              <div class="tool-card-top">
+                <span class="tool-logo gemini-logo" aria-hidden="true">✦</span
+                ><span class="tool-badge">GOOGLE-VÄNNEN</span>
+              </div>
+              <h3>Gemini</h3>
+              <p class="tool-intro">Nära till det du redan använder.</p>
+              <dl>
+                <dt>Bäst på</dt>
+                <dd>
+                  Att hjälpa till i Googles ekosystem och hitta sammanhang.
+                </dd>
+                <dt>Pris</dt>
+                <dd>Gratisnivå. Utökade funktioner med betalplan.</dd>
+                <dt>Personlighet</dt>
+                <dd>Saklig, snabb och praktiskt lagd.</dd>
+              </dl>
+              <div class="tool-choice">
+                <span class="eyebrow">VÄLJ NÄR …</span>
+                <p>
+                  … din vardag redan bor i Gmail, Google Kalender och Drive.
+                </p>
+              </div>
+              <a
+                class="text-link"
+                href="https://gemini.google/subscriptions/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Utforska Gemini <span aria-hidden="true">↗</span></a
+              >
+            </article>
+            <article
+              class="tool-card local-card"
+              data-tags="gratis privat skrivande"
+            >
+              <div class="tool-card-top">
+                <span class="tool-logo local-logo" aria-hidden="true">⌘</span
+                ><span class="tool-badge">HEMMA HOS DIG</span>
+              </div>
+              <h3>Lokal AI <span class="tool-subtitle">/ Open Source</span></h3>
+              <p class="tool-intro">Din dator. Dina grejer. Ditt tempo.</p>
+              <dl>
+                <dt>Bäst på</dt>
+                <dd>Privata utkast och arbete utan molntjänst.</dd>
+                <dt>Pris</dt>
+                <dd>
+                  Många modeller är gratis. Hårdvara och licenser varierar.
+                </dd>
+                <dt>Personlighet</dt>
+                <dd>Beror på modellen du väljer. Lite mer eget fix.</dd>
+              </dl>
+              <div class="tool-choice">
+                <span class="eyebrow">VÄLJ NÄR …</span>
+                <p>
+                  … du vill att informationen stannar på din enhet. Prova lokal
+                  körning i LM Studio.
+                </p>
+              </div>
+              <a
+                class="text-link"
+                href="https://lmstudio.ai/docs/app/offline"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Läs om lokal AI <span aria-hidden="true">↗</span></a
+              >
+            </article>
+            <aside class="tool-tip">
+              <svg aria-hidden="true"><use href="#dino" /></svg
+              ><span class="eyebrow">LABBETS LILLA RÅD</span>
+              <h3>Det bästa verktyget<br />är det du <em>använder.</em></h3>
+              <p>
+                Välj ett. Testa samma vardagsuppgift i en vecka. Du behöver inte
+                gifta dig med det.
+              </p>
+              <a class="text-link" href="#spar"
+                >Hitta något att testa
+                <svg aria-hidden="true"><use href="#arrow" /></svg
+              ></a>
+            </aside>
+          </div>
+          <p class="tools-note" aria-live="polite" id="filter-status">
+            Visar 5 verktyg. Personligheterna är förenklade intryck. Funktioner
+            och gränser beror på plan, region och behörigheter. Länkarna går
+            till tjänsternas egna villkor och priser.
+          </p>
+        </div>
+      </section>
+      <section id="spar" class="chapter container">
+        <div class="chapter-heading reveal">
+          <span class="chapter-number">03</span>
+          <div>
+            <span class="eyebrow">DEL 3 · VÄGSKÄLET</span>
+            <h2>Vad vill du ha<br /><em>mer tid till?</em></h2>
+            <p>Välj ditt spår. Börja med en liten sak. Resten kan vänta.</p>
+          </div>
+          <span class="handwritten"
+            >Din vardag bestämmer.<svg viewBox="0 0 90 40" aria-hidden="true">
+              <path
+                d="M4 3c2 28 47 36 77 15m-16-5 17 5-10 14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              /></svg
+          ></span>
+        </div>
+        <div class="track-tabs" role="tablist" aria-label="Välj ditt spår">
+          <button
+            class="track-tab active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="track-private"
+            id="tab-private"
+            data-track="private"
+          >
+            <span aria-hidden="true">⌂</span> Privatlivet
+            <span class="track-tab-note">Lite mer vardagslugn</span></button
+          ><button
+            class="track-tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="track-work"
+            id="tab-work"
+            data-track="work"
+            tabindex="-1"
+          >
+            <span aria-hidden="true">▱</span> Jobbet
+            <span class="track-tab-note">Färre tråkiga måsten</span></button
+          ><button
+            class="track-tab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="track-future"
+            id="tab-future"
+            data-track="future"
+            tabindex="-1"
+          >
+            <span aria-hidden="true">↗</span> Framkant
+            <span class="track-tab-note">För den nyfikna nörden</span>
+          </button>
+        </div>
+        <div
+          class="track-panel"
+          id="track-private"
+          role="tabpanel"
+          aria-labelledby="tab-private"
+        >
+          <div class="track-main">
+            <span class="eyebrow">🏠 PRIVATLIVET · BÖRJA SMÅTT</span>
+            <h3>Bygg din egen<br /><em>digitala butler.</em></h3>
+            <p>
+              Tänk om någon höll koll på det lilla, så att du fick plats med det
+              stora? Börja här, ett steg i taget.
+            </p>
+            <div class="steps">
+              <details open>
+                <summary>
+                  <span>01</span> Börja med ett lugnare mejlflöde
+                  <span class="details-plus" aria-hidden="true">+</span>
+                </summary>
+                <p>
+                  Klistra in ett ofarligt mejl och be om en sammanfattning och
+                  ett svarsutkast. När det känns bra: undersök en mejlkoppling,
+                  börja med läsbehörighet och godkänn alltid utskick själv.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  <span>02</span> Ge kalendern lite andrum
+                  <span class="details-plus" aria-hidden="true">+</span>
+                </summary>
+                <p>
+                  Beskriv en vanlig vecka utan privata detaljer. Be om förslag
+                  på fokusblock, pauser och restid. Med en godkänd
+                  kalenderkoppling kan en agent föreslå nya tider när möten
+                  krockar.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  <span>03</span> Samla dina påminnelser
+                  <span class="details-plus" aria-hidden="true">+</span>
+                </summary>
+                <p>
+                  Samla dina lösa listor och be AI gruppera dem i ”idag”, ”den
+                  här veckan” och ”kan vänta”. Välj tre saker. Lägg sedan in
+                  påminnelserna i den app du redan använder.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  <span>04</span> Låt matlådorna planera sig
+                  <span class="details-plus" aria-hidden="true">+</span>
+                </summary>
+                <p>
+                  Skriv vad som finns i kylen, hur många ni är och vad ni
+                  gillar. Be om fyra enkla middagar som ger lunchlådor, plus en
+                  inköpslista sorterad efter butikens avdelningar.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  <span>05</span> Få överblick över räkningarna
+                  <span class="details-plus" aria-hidden="true">+</span>
+                </summary>
+                <p>
+                  Gör en enkel lista med förfallodatum och belopp. Be AI föreslå
+                  en månadsrutin och påminnelser. Dela inga bankinloggningar.
+                  Kontrollera belopp och genomför betalningen i din bank.
+                </p>
+              </details>
+            </div>
+          </div>
+          <aside class="weekend-card">
+            <span class="eyebrow">HELGLABBET · HELT FRIVILLIGT</span>
+            <div class="robot-art" aria-hidden="true">
+              <svg viewBox="0 0 250 190">
+                <ellipse cx="126" cy="170" rx="74" ry="9" fill="#DAD5BB" />
+                <path
+                  d="m88 104-17 41 25 15m65-55 17 40-25 15"
+                  fill="none"
+                  stroke="#5E6F59"
+                  stroke-width="12"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M88 85q38-15 75 0l-6 49q-32 17-63-1Z"
+                  fill="#9DA886"
+                  stroke="#526A57"
+                  stroke-width="2"
+                />
+                <rect
+                  x="67"
+                  y="30"
+                  width="113"
+                  height="67"
+                  rx="23"
+                  fill="#F8F3E3"
+                  stroke="#526A57"
+                  stroke-width="2"
+                />
+                <rect
+                  x="82"
+                  y="44"
+                  width="82"
+                  height="36"
+                  rx="13"
+                  fill="#526A57"
+                />
+                <circle cx="103" cy="60" r="5" fill="#F5E7AE" />
+                <circle cx="144" cy="60" r="5" fill="#F5E7AE" />
+                <path d="m120 74 6 9 7-9" fill="#DDA16A" />
+                <path
+                  d="m126 30 5-14m-12 0h18"
+                  stroke="#526A57"
+                  stroke-width="2"
+                />
+                <path
+                  d="m52 43-14-8m13 26-17 2m153 44 16-6"
+                  stroke="#D18C65"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="m197 132 27 1-2 27h-26Zm26 5c13 0 12 15-1 15"
+                  fill="#D99976"
+                  stroke="#85644B"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </div>
+            <h4>Lite onödigt.<br /><em>Väldigt roligt.</em></h4>
+            <p>
+              En Microduck-skrivbordsrobot som läser dagens tre viktigaste
+              punkter till morgonkaffet?
+            </p>
+            <p>
+              Eller koppla en Nerf-gun till kalendern när du snoozar ett viktigt
+              block. Ett lekfullt experiment på ritbordet – med skumpilar och
+              säker avfyrning.
+            </p>
+            <button class="text-link" data-article="3">
+              Kika in i helglabbet
+              <svg aria-hidden="true"><use href="#arrow" /></svg></button
+            ><span class="weekend-note">Du får också bara ta en promenad.</span>
+          </aside>
+        </div>
+        <div
+          class="track-panel"
+          id="track-work"
+          role="tabpanel"
+          aria-labelledby="tab-work"
+          hidden
+        >
+          <div class="track-main">
+            <span class="eyebrow">💼 JOBBET · MER PLATS FÖR BRA ARBETE</span>
+            <h3>Slipp det tråkiga<br /><em>kontorsarbetet.</em></h3>
+            <p>
+              Färre kopierade anteckningar. Färre fram-och-tillbaka-mejl. Mer
+              tid till det du faktiskt är bra på.
+            </p>
+            <div class="steps">
+              <details open>
+                <summary>
+                  <span>01</span> Schemalägg med lite framförhållning
+                  <span class="details-plus" aria-hidden="true">+</span>
+                </summary>
+                <p>
+                  Låt en godkänd kalenderagent hitta fokusblock och lägga in
+                  pauser. Börja med förslag och bekräfta ändringarna själv.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  <span>02</span> Lös möteskrockar innan de händer
+                  <span class="details-plus" aria-hidden="true">+</span>
+                </summary>
+                <p>
+                  Med rätt behörighet kan AI identifiera krockar och föreslå
+                  alternativa tider utifrån deltagarnas tillgänglighet. Du
+                  godkänner innan något bokas om.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  <span>03</span> Avsluta mötet med en tydlig plan
+                  <span class="details-plus" aria-hidden="true">+</span>
+                </summary>
+                <p>
+                  Be ett av företaget godkänt verktyg sammanfatta
+                  anteckningarna: beslut, ansvarig och nästa steg. Be om
+                  deltagarnas medgivande innan inspelning och kontrollera
+                  sammanfattningen.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  <span>04</span> Få mejlutkast i din egen röst
+                  <span class="details-plus" aria-hidden="true">+</span>
+                </summary>
+                <p>
+                  Visa två avpersonifierade textexempel. Beskriv mottagaren och
+                  vad du vill uppnå. Be om ett kort utkast, redigera och skicka
+                  själv.
+                </p>
+              </details>
+            </div>
+          </div>
+          <aside class="work-card">
+            <span class="eyebrow">EN TIMME. EN KONKRET BÖRJAN.</span
+            ><svg aria-hidden="true" class="consult-dino">
+              <use href="#dino" />
+            </svg>
+            <h4>Lite hjälp att<br /><em>komma igång?</em></h4>
+            <p>
+              Vill ni ha hjälp att sätta upp det här på ert företag utan
+              krångel? Boka en timme med Mattias.
+            </p>
+            <p>
+              Vi börjar med en riktig arbetsuppgift och hittar ett upplägg som
+              passar era verktyg.
+            </p>
+            <button class="button button-dark" data-booking>
+              Boka en timme <svg aria-hidden="true"><use href="#arrow" /></svg>
+            </button>
+          </aside>
+        </div>
+        <div
+          class="track-panel"
+          id="track-future"
+          role="tabpanel"
+          aria-labelledby="tab-future"
+          hidden
+        >
+          <div class="track-main">
+            <span class="eyebrow">🚀 FRAMKANT · NYFIKEN UTAN STRESS</span>
+            <h3>Labbet &amp;<br /><em>framtiden.</em></h3>
+            <p>
+              Här får det vara lite mer experiment. Du behöver inte göra allt.
+              Välj en idé som får det att klia i fingrarna.
+            </p>
+            <div class="steps">
+              <details open>
+                <summary>
+                  <span>01</span> En natt-agent med pass kl. 02:00
+                  <span class="details-plus" aria-hidden="true">+</span>
+                </summary>
+                <p>
+                  Låt en schemalagd agent läsa morgondagens kalender, upptäcka
+                  luckor och förbereda ett förslag till dagsplan. Den behöver en
+                  tjänst som kör i bakgrunden och uttryckligt godkända
+                  kopplingar.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  <span>02</span> Din egen morgontidning kl. 06:00
+                  <span class="details-plus" aria-hidden="true">+</span>
+                </summary>
+                <p>
+                  Välj tre ämnen och en handfull trovärdiga källor. Låt en agent
+                  sammanfatta med länkar, sortera bort dubbletter och leverera
+                  ett kort morgonbrev. Kontrollera att schemaläggning och
+                  utskick stöds av din tjänst.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  <span>03</span> Flytta hem en liten modell
+                  <span class="details-plus" aria-hidden="true">+</span>
+                </summary>
+                <p>
+                  Prova en liten öppen modell i LM Studio eller Ollama. Ladda
+                  ned den, välj lokal körning och testa ett ofarligt dokument
+                  offline. Hastigheten beror på datorns minne och
+                  beräkningskraft.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  <span>04</span> Bygg en 3D- eller kod-pipeline
+                  <span class="details-plus" aria-hidden="true">+</span>
+                </summary>
+                <p>
+                  Knyt ihop ett avgränsat flöde: brief → kodutkast → test →
+                  manuell granskning. För 3D: börja med att sortera referenser
+                  eller skapa ett enkelt skript. Spara originalen och godkänn
+                  varje steg.
+                </p>
+              </details>
+            </div>
+          </div>
+          <aside class="future-card">
+            <span class="eyebrow">ANTECKNING FRÅN LABBET</span
+            ><svg class="orbit-art" viewBox="0 0 240 190" aria-hidden="true">
+              <g fill="none" stroke="#7A8970" stroke-width="1.5">
+                <ellipse
+                  cx="120"
+                  cy="95"
+                  rx="95"
+                  ry="40"
+                  transform="rotate(-30 120 95)"
+                />
+                <ellipse
+                  cx="120"
+                  cy="95"
+                  rx="95"
+                  ry="40"
+                  transform="rotate(40 120 95)"
+                />
+                <ellipse cx="120" cy="95" rx="35" ry="78" />
+              </g>
+              <circle cx="120" cy="95" r="23" fill="#D97757" />
+              <circle cx="39" cy="132" r="9" fill="#E7BB7F" />
+              <circle cx="169" cy="43" r="7" fill="#5E7A68" />
+              <path
+                d="m199 138 4 11 12 4-12 3-4 12-3-12-12-3 12-4Z"
+                fill="#5E7A68"
+              />
+            </svg>
+            <h4>Framtiden kan<br /><em>vänta till efter kaffet.</em></h4>
+            <p>
+              Det kommer alltid en ny modell. Ett nytt verktyg. En ny sak att
+              känna att man borde kunna.
+            </p>
+            <p>
+              Det roliga börjar när du släpper racet och bygger något för din
+              egen skull.
+            </p>
+            <button class="text-link" data-article="0">
+              Läs om morgontidningen
+              <svg aria-hidden="true"><use href="#arrow" /></svg>
+            </button>
+          </aside>
+        </div>
+      </section>
+      <section id="blogg" class="blog-section">
+        <div class="container">
+          <div class="chapter-heading reveal">
+            <span class="chapter-number">04</span>
+            <div>
+              <span class="eyebrow">DEL 4 · FRÅN VARDAGSLABBET</span>
+              <h2>AI utan FOMO.<br /><em>Nyfikenhet i lagom dos.</em></h2>
+              <p>
+                Idéer, lärdomar och lagom nördiga sidospår.<br />Fyra
+                exempelartiklar på vad du kan utforska här.
+              </p>
+            </div>
+            <span class="blog-stamp" aria-hidden="true"
+              >NYFIKENHET<br />FÖRE HYPE<span>✳</span></span
+            >
+          </div>
+          <div class="posts-grid">
+            <article class="post-card">
+              <button
+                class="post-open"
+                data-article="0"
+                aria-labelledby="post-title-0"
+              >
+                <div class="post-art newspaper-art" aria-hidden="true">
+                  <svg viewBox="0 0 450 240">
+                    <path
+                      d="m125 61 190-16 11 146-189 15Z"
+                      fill="#FCF8EE"
+                      stroke="#5E7060"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="m146 82 145-11m-143 22 141-11m-138 39 55-4m-54 16 55-4m-54 16 55-4m-53 17 55-4"
+                      stroke="#5E7060"
+                      stroke-width="3"
+                    />
+                    <path d="m225 112 66-5 5 51-66 5Z" fill="#B0B895" />
+                    <path
+                      d="m231 153 17-24 15 14 12-13 15 19"
+                      fill="none"
+                      stroke="#687D65"
+                      stroke-width="2"
+                    />
+                    <circle cx="276" cy="122" r="5" fill="#F5E5B8" />
+                    <path
+                      d="m153 183 143-11"
+                      stroke="#5E7060"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="m91 111-18-5m24 23-18 7m266-41 14-10"
+                      stroke="#7A8B72"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <text
+                      x="144"
+                      y="59"
+                      font-size="14"
+                      fill="#5E7060"
+                      font-family="DM Mono, monospace"
+                      transform="rotate(-5 144 59)"
+                    >
+                      06:00
+                    </text></svg
+                  ><span class="art-label">VARDAGSAUTOMATIK</span>
+                </div>
+                <div class="post-copy">
+                  <div class="post-meta">
+                    <time datetime="2026-10-24">24 OKT 2026</time
+                    ><span>6 MIN LÄSNING</span>
+                  </div>
+                  <h3 id="post-title-0">
+                    Så byggde jag min egen morgontidning som levereras kl. 06:00
+                  </h3>
+                  <p>
+                    Färre flikar. Mer sammanhang. En liten ritual som börjar
+                    innan kaffet är klart.
+                  </p>
+                  <span class="post-read"
+                    >Läs artikeln
+                    <svg aria-hidden="true"><use href="#arrow" /></svg
+                  ></span>
+                </div>
+              </button>
+            </article>
+            <article class="post-card">
+              <button
+                class="post-open"
+                data-article="1"
+                aria-labelledby="post-title-1"
+              >
+                <div class="post-art reminders-art" aria-hidden="true">
+                  <svg viewBox="0 0 450 240">
+                    <g fill="#F8F2E6" stroke="#9E806B" stroke-width="1.5">
+                      <rect
+                        x="87"
+                        y="72"
+                        width="86"
+                        height="83"
+                        rx="3"
+                        transform="rotate(-12 87 72)"
+                      />
+                      <rect
+                        x="144"
+                        y="48"
+                        width="86"
+                        height="83"
+                        rx="3"
+                        transform="rotate(10 144 48)"
+                      />
+                      <rect
+                        x="117"
+                        y="108"
+                        width="86"
+                        height="83"
+                        rx="3"
+                        transform="rotate(-4 117 108)"
+                      />
+                    </g>
+                    <path
+                      d="m106 91 43-9m-38 25 39-8m14-36 40 7m-44 9 40 7m-65 47 43-3m-42 19 33-2"
+                      stroke="#B79C83"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M227 121h31m-9-7 9 7-9 7"
+                      fill="none"
+                      stroke="#9E806B"
+                      stroke-width="2"
+                    />
+                    <rect
+                      x="280"
+                      y="63"
+                      width="90"
+                      height="121"
+                      rx="7"
+                      fill="#F8F2E6"
+                      stroke="#667D65"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="m293 89 5 5 9-12m-14 34 5 5 9-12m-14 34 5 5 9-12"
+                      fill="none"
+                      stroke="#667D65"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M318 88h37m-37 27h37m-37 27h29"
+                      stroke="#A4AA8B"
+                      stroke-width="2"
+                    /></svg
+                  ><span class="art-label">DIGITALT LUGN</span>
+                </div>
+                <div class="post-copy">
+                  <div class="post-meta">
+                    <time datetime="2026-10-18">18 OKT 2026</time
+                    ><span>5 MIN LÄSNING</span>
+                  </div>
+                  <h3 id="post-title-1">
+                    Digital butler i praktiken: Från 280 röriga påminnelser till
+                    totalt lugn
+                  </h3>
+                  <p>
+                    När allt känns viktigt hjälper det inte med ännu en lista.
+                    Så kan du börja sortera.
+                  </p>
+                  <span class="post-read"
+                    >Läs artikeln
+                    <svg aria-hidden="true"><use href="#arrow" /></svg
+                  ></span>
+                </div>
+              </button>
+            </article>
+            <article class="post-card">
+              <button
+                class="post-open"
+                data-article="2"
+                aria-labelledby="post-title-2"
+              >
+                <div class="post-art plant-art" aria-hidden="true">
+                  <svg viewBox="0 0 450 240">
+                    <path
+                      d="m180 153 92 0-13 50h-66Z"
+                      fill="#C98F70"
+                      stroke="#947159"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M225 155c-5-51-13-80-6-115m5 94c-45 1-70-18-64-52 43-1 63 18 64 52m0-28c2-43 24-62 59-60 2 37-18 58-59 60"
+                      fill="#839875"
+                    />
+                    <path
+                      d="M225 157c-2-31-3-62-6-101m5 75-43-28m43 3 36-37"
+                      fill="none"
+                      stroke="#4C6F56"
+                      stroke-width="1.8"
+                    />
+                    <path
+                      d="m138 61 5 12 13 4-13 4-5 13-4-13-13-4 13-4Z"
+                      fill="#E0B27A"
+                    />
+                    <path
+                      d="M302 140q22-16 33 0m-13-10v26"
+                      stroke="#8F9F7A"
+                      stroke-width="2"
+                      fill="none"
+                    /></svg
+                  ><span class="art-label">LÅT DET VARA LAGOM</span>
+                </div>
+                <div class="post-copy">
+                  <div class="post-meta">
+                    <time datetime="2026-10-12">12 OKT 2026</time
+                    ><span>3 MIN LÄSNING</span>
+                  </div>
+                  <h3 id="post-title-2">
+                    Veckans AI utan FOMO: Det enda du faktiskt behöver bry dig
+                    om just nu
+                  </h3>
+                  <p>
+                    En användbar vana slår tio nya appar. Den här veckan börjar
+                    vi med en enda fråga.
+                  </p>
+                  <span class="post-read"
+                    >Läs artikeln
+                    <svg aria-hidden="true"><use href="#arrow" /></svg
+                  ></span>
+                </div>
+              </button>
+            </article>
+            <article class="post-card">
+              <button
+                class="post-open"
+                data-article="3"
+                aria-labelledby="post-title-3"
+              >
+                <div class="post-art nerf-art" aria-hidden="true">
+                  <svg viewBox="0 0 450 240">
+                    <rect
+                      x="102"
+                      y="67"
+                      width="117"
+                      height="111"
+                      rx="8"
+                      fill="#FBF5E8"
+                      stroke="#8C775F"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M102 95h117m-90-40v24m62-24v24"
+                      stroke="#8C775F"
+                      stroke-width="3"
+                    />
+                    <text
+                      x="134"
+                      y="146"
+                      font-family="Newsreader, Georgia, serif"
+                      font-size="44"
+                      fill="#806D55"
+                    >
+                      09
+                    </text>
+                    <path
+                      d="m276 119 55-11 7 17-55 12Z"
+                      fill="#D88A61"
+                      stroke="#976B51"
+                      stroke-width="2"
+                    />
+                    <path d="m328 108 16-3 7 18-14 3Z" fill="#6D8B79" />
+                    <path
+                      d="m263 129-21 5m16-17-18-2m21 25-16 11"
+                      stroke="#B58D67"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M303 73c8-21 25-18 30-5"
+                      stroke="#8C775F"
+                      stroke-width="1.5"
+                      fill="none"
+                    />
+                    <text
+                      x="336"
+                      y="75"
+                      font-family="Newsreader, Georgia, serif"
+                      font-size="27"
+                      fill="#8C775F"
+                    >
+                      ?
+                    </text></svg
+                  ><span class="art-label">DET FRIVILLIGA HELGLABBET</span>
+                </div>
+                <div class="post-copy">
+                  <div class="post-meta">
+                    <time datetime="2026-10-05">5 OKT 2026</time
+                    ><span>4 MIN LÄSNING</span>
+                  </div>
+                  <h3 id="post-title-3">
+                    Experiment: Kan en kalender skjuta skumpilar när man
+                    snoozar?
+                  </h3>
+                  <p>
+                    En ganska orimlig idé om fokus, mjukvara och mycket mjuka
+                    konsekvenser.
+                  </p>
+                  <span class="post-read"
+                    >Läs artikeln
+                    <svg aria-hidden="true"><use href="#arrow" /></svg
+                  ></span>
+                </div>
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="nyhetsbrev" class="newsletter-section container reveal">
+        <div class="newsletter-art" aria-hidden="true">
+          <svg viewBox="0 0 240 230">
+            <path
+              d="m34 105 87-58 85 58-8 90H42Z"
+              fill="#D9B18A"
+              stroke="#917258"
+              stroke-width="1.8"
+            />
+            <path
+              d="m60 130 5-108 111 8-4 110"
+              fill="#FCF9F0"
+              stroke="#917258"
+              stroke-width="1.8"
+            />
+            <path
+              d="m83 54 67 4m-68 14 54 3m-55 16 67 4"
+              stroke="#A4AE91"
+              stroke-width="3"
+            />
+            <path
+              d="m37 107 84 56 84-56m-166 86 61-47m97 49-56-48"
+              fill="#DEBC97"
+              stroke="#917258"
+              stroke-width="1.8"
+            />
+            <path
+              d="m188 28 4 13 13 4-13 4-4 13-4-13-13-4 13-4Z"
+              fill="#72896F"
+            />
+            <path
+              d="M32 53q-17 8-14 25m9-8-9 9-7-9"
+              fill="none"
+              stroke="#72896F"
+              stroke-width="1.7"
+            /></svg
+          ><span class="handwritten">Ett brev. Ett andetag.</span>
+        </div>
+        <div class="newsletter-copy">
+          <span class="eyebrow">LITE LUGN I INKORGEN</span>
+          <h2>Häng med.<br /><em>I din egen takt.</em></h2>
+          <p>
+            Inga dagliga nyhetsbomber. Bara ett lugnt mejl när jag testat något
+            som faktiskt gör vardagen enklare.
+          </p>
+          <form id="newsletter-form">
+            <label class="sr-only" for="newsletter-email"
+              >Din e-postadress</label
+            >
+            <div class="email-field">
+              <input
+                id="newsletter-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="Din e-postadress"
+                required
+                maxlength="254"
+              /><button class="button button-dark" type="submit">
+                Ja, lite lugn tack
+                <svg aria-hidden="true"><use href="#arrow" /></svg>
+              </button>
+            </div>
+            <p class="form-note">
+              Formuläret är en förhandsvisning. Din adress sparas inte och inget
+              skickas.
+            </p>
+            <p
+              class="form-message"
+              id="newsletter-message"
+              role="status"
+              hidden
+            ></p>
+          </form>
+        </div>
+      </section>
+      <section id="kontakt" class="consult-strip">
+        <div class="container">
+          <div>
+            <span class="eyebrow">FÖR DIG OCH DITT FÖRETAG</span>
+            <h2>Nyfiken på vad AI kan göra <em>för er?</em></h2>
+            <p>
+              En timme med Mattias. En riktig vardagsutmaning. En konkret
+              början.
+            </p>
+          </div>
+          <button class="button button-outline" data-booking>
+            Ta en kaffe med Mattias
+            <svg aria-hidden="true"><use href="#arrow" /></svg>
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer container">
+      <div class="footer-top">
+        <a class="brand" href="#hem"
+          ><svg class="brand-dino" aria-hidden="true"><use href="#dino" /></svg
+          ><span class="wordmark"
+            >Lugna Labbet<span class="brand-by"
+              >av <strong>BlueDino</strong></span
+            ></span
+          ></a
+        >
+        <p>
+          Lite mer nyfikenhet. Lite mindre brus.<br />Och gott om plats för
+          livet däremellan.
+        </p>
+        <a class="text-link" href="#hem"
+          >Tillbaka till lugnet <span aria-hidden="true">↑</span></a
+        >
+      </div>
+      <div class="footer-bottom">
+        <span
+          >© <span id="year">2026</span> Lugna Labbet · En del av BlueDino</span
+        ><span
+          >Byggt med nyfikenhet. Och en och annan kaffepaus.
+          <span aria-hidden="true">✳</span></span
+        >
+      </div>
+    </footer>
+    <dialog
+      id="article-dialog"
+      class="article-dialog"
+      aria-labelledby="article-dialog-title"
+    >
+      <button class="dialog-close" aria-label="Stäng artikel" data-close>
+        ×
+      </button>
+      <div class="article-dialog-content">
+        <span class="eyebrow" id="article-dialog-meta"></span>
+        <h2 id="article-dialog-title"></h2>
+        <div id="article-dialog-body" class="article-body"></div>
+        <button class="button button-outline" data-close>
+          Tillbaka till Vardagslabbet <span aria-hidden="true">↩</span>
+        </button>
+      </div>
+    </dialog>
+    <dialog
+      id="booking-dialog"
+      class="booking-dialog"
+      aria-labelledby="booking-title"
+    >
+      <button
+        class="dialog-close"
+        aria-label="Stäng bokningsförfrågan"
+        data-close
+      >
+        ×</button
+      ><span class="eyebrow">EN KAFFE OCH EN KONKRET BÖRJAN</span>
+      <h2 id="booking-title">En timme med <em>Mattias.</em></h2>
+      <p>
+        Vad skulle ni vilja förenkla? Gör ett litet underlag att ta med till ert
+        första samtal.
+      </p>
+      <form id="booking-form">
+        <label for="booking-topic">Det här vill jag ha hjälp med</label
+        ><select id="booking-topic">
+          <option>Mejl, kalender och vardagsadmin</option>
+          <option>Mötesanteckningar och kontorsarbete</option>
+          <option>En digital butler för företaget</option>
+          <option>Lokala modeller och egna experiment</option>
+          <option>Jag vill börja från början</option></select
+        ><label for="booking-description"
+          >Berätta kort om er vardag <span>(valfritt)</span></label
+        ><textarea
+          id="booking-description"
+          rows="3"
+          placeholder="Vi lägger mycket tid på …"
+          maxlength="1500"
+        ></textarea
+        ><button class="button button-terra" type="submit">
+          Spara mitt samtalsunderlag <span aria-hidden="true">↓</span>
+        </button>
+        <p class="form-note">
+          En textfil laddas ned till din enhet. Ingen förfrågan skickas och
+          ingen tid bokas på demosidan.
+        </p>
+        <p id="booking-message" class="form-message" role="status" hidden></p>
+      </form>
+    </dialog>
+  </body>
+</html>
