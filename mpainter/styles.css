@@ -209,6 +209,11 @@ p {
   line-height: 1.55;
 }
 
+.hero-point {
+  max-width: 38rem;
+  margin-top: 16px;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
