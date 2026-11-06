@@ -7,13 +7,13 @@
     <meta name="theme-color" content="#090A0B" />
     <meta
       name="description"
-      content="mPainter is a layer-based texture painting app built on Blender. A familiar layer-based workflow, plus Blender materials you turn into Material Presets and paint with. Version 0.9.0-alpha. Early access is $15, with updates through 1.0 included."
+      content="mPainter is a layer-based texture painting app built on Blender. A familiar layer-based workflow, plus Blender node materials you turn into Material Presets and paint with. Version 0.9.0-alpha for Windows, macOS, and Linux. Early access is $15, with updates through 1.0 included."
     />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="mPainter — Layer-based texture painting app built on Blender" />
     <meta
       property="og:description"
-      content="A familiar layer-based texturing workflow. Turn Blender materials into Material Presets and paint with them, including the hundreds already shared online. Version 0.9.0-alpha. Early access is $15."
+      content="A familiar layer-based texturing workflow. Turn Blender node materials into Material Presets and paint with them, including the hundreds already shared online. Version 0.9.0-alpha. Early access is $15."
     />
     <meta property="og:url" content="https://bluedino.se/mpainter/" />
     <meta property="og:image" content="https://bluedino.se/mpainter/assets/2026-11-05-spider-viewport-layers.png" />
@@ -32,7 +32,7 @@
     <div class="page">
       <header class="site-header">
         <a class="studio" href="/" aria-label="Blue Dino home">
-          <img src="./assets/blue-dino-logo.png" alt="Blue Dino" width="3172" height="1128" />
+          <img src="./assets/blue-dino-logo.png" alt="" width="3172" height="1128" />
         </a>
         <p class="eyebrow draft-label">Draft preview</p>
         <nav aria-label="On this page">
@@ -45,188 +45,231 @@
       </header>
 
       <main id="main">
+        <!-- Hero -->
         <section class="hero" aria-labelledby="hero-title">
-          <div class="hero-copy">
+          <div class="hero-head">
             <div class="lockup">
-              <img
-                class="wordmark"
-                src="./assets/wordmark.png"
-                alt="mPainter"
-                width="868"
-                height="190"
-              />
+              <img class="wordmark" src="./assets/wordmark.png" alt="mPainter" width="868" height="190" />
               <p class="eyebrow">0.9.0-alpha</p>
             </div>
-            <h1 id="hero-title">Paint textures on the 3D model.</h1>
+            <h1 id="hero-title">Paint textures directly on your&nbsp;3D&nbsp;model.</h1>
+          </div>
+          <div class="hero-body">
             <p class="lede">Layer-based texture painting app built on Blender.</p>
             <p class="hero-point">
-              A familiar layer-based texturing workflow. Turn Blender materials into Material Presets and paint with them, including the hundreds already shared online.
+              Work in the familiar layer-based texturing workflow. Then turn Blender node materials into Material Presets and paint with them, including the hundreds already shared online.
             </p>
             <div class="actions">
               <a class="button primary" href="https://mattiaslind.gumroad.com/l/mpainter">
-                Buy the alpha <span aria-hidden="true">↗</span>
+                Buy the alpha · $15 <span aria-hidden="true">↗</span>
               </a>
               <a class="text-link" href="#paint">See the workflow</a>
             </div>
-            <p class="price-note">$15 during early access. Updates through 1.0 are included.</p>
+            <p class="price-note">Windows, macOS (Apple silicon), and Linux. Updates through 1.0 included.</p>
           </div>
+
           <figure class="hero-art">
-            <img
-              src="./assets/2026-11-05-spider-viewport-layers.png"
-              alt="mPainter showing a painted spider on a worn metal shovel in the 3D viewport. The layer stack is open on the right, with fill layers and folders, and the assets panel is open on the left."
-              width="2559"
-              height="1365"
-              fetchpriority="high"
-            />
-            <figcaption>
-              <span class="eyebrow">3D viewport</span>
-              <p>The layer stack open beside the painted model.</p>
+            <div class="frame resolve">
+              <img
+                src="./assets/2026-11-05-spider-viewport-layers.png"
+                alt="mPainter showing a painted spider on a worn metal shovel in the 3D viewport. The layer stack is open on the right, with fill layers and folders, and the assets panel is open on the left."
+                width="2559"
+                height="1365"
+                fetchpriority="high"
+              />
+            </div>
+            <figcaption class="annotations">
+              <p><span class="eyebrow">Assets</span> Materials and presets</p>
+              <p><span class="eyebrow">3D view</span> Paint on the model</p>
+              <p><span class="eyebrow">Layers</span> Fill layers and folders</p>
             </figcaption>
           </figure>
         </section>
 
+        <!-- 01 Paint -->
         <section class="section" id="paint" aria-labelledby="paint-title">
-          <div class="split">
-            <div class="copy">
-              <p class="eyebrow">01 / Viewport</p>
-              <h2 id="paint-title">Paint in the 3D view</h2>
-              <p>
-                Paint directly on the model in the 3D view. The texture stays on the surface in front of you while you work.
-              </p>
-            </div>
-            <figure>
-              <img
-                src="./assets/2026-11-06-viewport-character-front.png"
-                alt="mPainter 3D viewport with a painted character facing the camera. Tentacles cross the lower face, and the assets panel is open on the left."
-                width="2555"
-                height="1299"
-                loading="lazy"
-              />
-              <figcaption>
-                <span class="eyebrow">3D viewport</span>
-                <p>Paint on the model, seen from the front.</p>
-              </figcaption>
-            </figure>
+          <div class="section-head">
+            <p class="eyebrow">01 / 3D view</p>
+            <h2 id="paint-title">Paint where you see the result</h2>
+            <p>
+              Paint directly on the model in the 3D view. Turn it, move in close, and keep painting on the surface in front of you.
+            </p>
           </div>
-          <div class="pair">
-            <figure>
-              <img
-                src="./assets/2026-11-06-viewport-character-close.png"
-                alt="Close view in the mPainter 3D viewport of the same painted character, with eyes, tentacles, and a dark hat."
-                width="2555"
-                height="1299"
-                loading="lazy"
-              />
-              <figcaption>
-                <span class="eyebrow">3D viewport</span>
-                <p>The same model, closer.</p>
-              </figcaption>
+          <div class="paint-grid">
+            <figure class="paint-main">
+              <div class="frame">
+                <img
+                  src="./assets/2026-11-06-viewport-character-front.png"
+                  alt="mPainter 3D viewport with a painted character facing the camera. Tentacles cross the lower face, and the assets panel is open on the left."
+                  width="2555"
+                  height="1299"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>The painted character, seen from the front.</figcaption>
             </figure>
-            <figure>
-              <img
-                src="./assets/2026-11-06-uv-and-viewport.png"
-                alt="mPainter with the painted character in the 3D view on the left and the UV layout on the right."
-                width="2555"
-                height="1299"
-                loading="lazy"
-              />
-              <figcaption>
-                <span class="eyebrow">UV layout</span>
-                <p>The 3D view beside the UV layout.</p>
-              </figcaption>
+            <figure class="paint-detail">
+              <div class="frame crop crop-face">
+                <img
+                  src="./assets/2026-11-06-viewport-character-close.png"
+                  alt="Close view in the mPainter 3D viewport of the same painted character, with eyes, tentacles, and a dark hat."
+                  width="2555"
+                  height="1299"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>Closer, from below. Same model, same layers.</figcaption>
             </figure>
           </div>
         </section>
 
+        <!-- 02 Layers -->
         <section class="section" id="layers" aria-labelledby="layers-title">
-          <div class="split">
-            <figure>
+          <div class="layers-grid">
+            <div class="copy">
+              <p class="eyebrow">02 / Layer stack</p>
+              <h2 id="layers-title">Build materials in layers</h2>
+              <p>
+                Stack fill layers, group them in folders, and mask them. Nothing is baked in, so you can go back to an early layer and change it without redoing the rest.
+              </p>
+              <dl class="facts">
+                <div>
+                  <dt>Fill layers</dt>
+                  <dd>A material or color across the surface, shaped by its mask.</dd>
+                </div>
+                <div>
+                  <dt>Folders</dt>
+                  <dd>Group layers into one part of the material.</dd>
+                </div>
+                <div>
+                  <dt>Nondestructive</dt>
+                  <dd>Every layer stays editable.</dd>
+                </div>
+              </dl>
+            </div>
+            <figure class="layers-art">
+              <div class="frame crop crop-stack">
+                <img
+                  src="./assets/2026-11-05-spider-viewport-layers.png"
+                  alt="Detail of the mPainter layer stack beside the painted spider: fill layers and folders, each with its own mask layers."
+                  width="2559"
+                  height="1365"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>The stack beside the spider: folders, fill layers, and their masks.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- 03 Material Presets (USP) -->
+        <section class="section presets" id="presets" aria-labelledby="presets-title">
+          <div class="presets-head">
+            <p class="eyebrow">03 / Material Presets</p>
+            <h2 id="presets-title" class="statement">
+              Turn Blender node materials into Material Presets, and paint with them.
+            </h2>
+          </div>
+          <div class="presets-body">
+            <div class="copy">
+              <p>
+                Procedural node materials from Blender become Material Presets you can paint, layer, and mask like any other layer. Save a folder from your stack as a preset to reuse a whole setup.
+              </p>
+              <p>
+                Hundreds of Blender materials are already shared online. Import ones you download from <a href="https://polyhaven.com/textures">Poly Haven</a> or the wider Blender community, or bring your own node setups.
+              </p>
+            </div>
+            <ol class="flow" aria-label="From Blender material to painted layer">
+              <li>
+                <span class="node" aria-hidden="true"></span>
+                <span class="eyebrow">Import</span>
+                <strong>A Blender node material</strong>
+                <span class="note">Your own, Poly Haven, or the community</span>
+              </li>
+              <li>
+                <span class="node" aria-hidden="true"></span>
+                <span class="eyebrow">Preset</span>
+                <strong>A Material Preset</strong>
+                <span class="note">Ready in the assets panel</span>
+              </li>
+              <li>
+                <span class="node" aria-hidden="true"></span>
+                <span class="eyebrow">Paint</span>
+                <strong>A layer on your model</strong>
+                <span class="note">Masked and editable in the stack</span>
+              </li>
+            </ol>
+            <p class="flow-return">
+              <span class="eyebrow">Keep</span>
+              Save any folder as a preset, and it joins the rest.
+            </p>
+          </div>
+        </section>
+
+        <!-- 04 Mask Generators -->
+        <section class="section" id="generators" aria-labelledby="generators-title">
+          <div class="section-head wide">
+            <p class="eyebrow">04 / Mask Generators</p>
+            <h2 id="generators-title">Edge wear in one step. Still editable after.</h2>
+            <p>
+              Mask Generators read the shape of the model to place wear, grime, and dust where they belong. Adjust a generated mask at any time; it stays a live part of the stack.
+            </p>
+          </div>
+          <figure class="generators-art">
+            <div class="frame">
               <img
                 src="./assets/2026-11-05-spider-viewport-close.png"
-                alt="Closer mPainter view of the painted spider on the shovel, with the layer stack still open on the right."
+                alt="Close mPainter view of the painted spider on the shovel, with worn edges and grime. The layer stack on the right lists ambient occlusion, world normal, and position masks."
                 width="2559"
                 height="1365"
                 loading="lazy"
               />
-              <figcaption>
-                <span class="eyebrow">Layer stack</span>
-                <p>Fill layers and folders beside the model.</p>
-              </figcaption>
-            </figure>
-            <div class="copy">
-              <p class="eyebrow">02 / Layer stack</p>
-              <h2 id="layers-title">Fill layers and folders</h2>
-              <p>
-                Build the material with fill layers and folders. The stack is nondestructive, so you can change an earlier layer and keep the rest.
-              </p>
             </div>
-          </div>
-        </section>
-
-        <section class="section" id="presets" aria-labelledby="presets-title">
-          <div class="copy narrow">
-            <p class="eyebrow">03 / Material presets</p>
-            <h2 id="presets-title">Material presets from Blender</h2>
-            <p>
-              Procedural Blender node materials become Material Presets you paint with. Save a folder as a preset when you want that setup again.
-            </p>
-            <p>
-              Hundreds of materials are already shared online. Import your own node materials, materials from <a href="https://polyhaven.com/textures">Poly Haven</a>, or materials from the wider Blender community.
-            </p>
-          </div>
-          <ol class="steps">
-            <li>
-              <span class="eyebrow">Import</span>
-              <strong>A Blender node material</strong>
-            </li>
-            <li>
-              <span class="eyebrow">Paint</span>
-              <strong>Use it as a Material Preset</strong>
-            </li>
-            <li>
-              <span class="eyebrow">Keep</span>
-              <strong>Save a folder as a preset</strong>
-            </li>
-          </ol>
-        </section>
-
-        <section class="section" id="generators" aria-labelledby="generators-title">
-          <div class="copy narrow">
-            <p class="eyebrow">04 / Mask generators</p>
-            <h2 id="generators-title">Mask generators that stay editable</h2>
-            <p>
-              Curvature, ambient occlusion, position, and world normal generate masks for edge wear and similar effects. Each mask stays editable after it is generated.
-            </p>
-          </div>
-          <ul class="index" aria-label="Mask generators">
-            <li>Curvature</li>
-            <li>Ambient occlusion</li>
-            <li>Position</li>
-            <li>World normal</li>
+            <figcaption>Worn edges and grime on the spider, with generated masks listed in the stack.</figcaption>
+          </figure>
+          <ul class="generators" aria-label="Mask Generators">
+            <li><span class="eyebrow">01</span><strong>Curvature</strong><span>Edges and cavities</span></li>
+            <li><span class="eyebrow">02</span><strong>Ambient occlusion</strong><span>Crevices and contact areas</span></li>
+            <li><span class="eyebrow">03</span><strong>Position</strong><span>Gradients across the model</span></li>
+            <li><span class="eyebrow">04</span><strong>World normal</strong><span>Surfaces facing a direction</span></li>
           </ul>
         </section>
 
-        <section class="section" id="workspace" aria-label="Assets panel and pre-compose">
-          <div class="support">
+        <!-- 05 Supporting -->
+        <section class="section support" id="workspace" aria-label="Assets panel and pre-compose">
+          <figure class="support-art">
+            <div class="frame">
+              <img
+                src="./assets/2026-11-06-uv-and-viewport.png"
+                alt="mPainter with the assets panel on the left, the painted character in the 3D view, and the UV layout beside it."
+                width="2555"
+                height="1299"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>Assets panel, 3D view, and UV layout side by side.</figcaption>
+          </figure>
+          <div class="support-list">
             <article>
               <p class="eyebrow">05 / Assets</p>
-              <h2>Assets panel</h2>
-              <p>Imported materials, presets, and mask generators live in the assets panel.</p>
+              <h3>Assets panel</h3>
+              <p>Imported materials, Material Presets, and Mask Generators in one panel beside the viewport.</p>
             </article>
             <article>
-              <p class="eyebrow">05 / Pre-compose</p>
-              <h2>Pre-compose and cache</h2>
+              <p class="eyebrow">06 / Pre-compose</p>
+              <h3>Pre-compose and cache</h3>
               <p>Pre-compose layers and cache the result, then keep working in the stack.</p>
             </article>
           </div>
         </section>
 
+        <!-- 07 Source -->
         <section class="section source" id="source" aria-labelledby="source-title">
-          <p class="eyebrow">06 / Blender · GPL-3.0</p>
+          <p class="eyebrow">07 / Blender · GPL-3.0</p>
           <div class="copy">
             <h2 id="source-title">Built on Blender. The source is open.</h2>
             <p>
-              mPainter is built on Blender and licensed under GPL-3.0. You pay for a ready-made build, and that payment supports development.
+              mPainter is built on Blender and licensed under GPL-3.0. The source is on GitHub. Buying gets you a ready-made build, and the payment supports development.
             </p>
             <a class="text-link" href="https://github.com/mattiaslind93/mpainter">
               github.com/mattiaslind93/mpainter <span aria-hidden="true">↗</span>
@@ -234,43 +277,38 @@
           </div>
         </section>
 
-        <section class="section" id="platforms" aria-labelledby="platforms-title">
-          <div class="copy narrow">
-            <p class="eyebrow">07 / Platforms</p>
+        <!-- 08 Platforms + 09 Buy -->
+        <section class="section closing" aria-label="Platforms and purchase">
+          <div class="platforms-block" id="platforms">
+            <p class="eyebrow">08 / Platforms</p>
             <h2 id="platforms-title">Windows, macOS, and Linux</h2>
             <p class="version">Version <span class="mono">0.9.0-alpha</span></p>
+            <dl class="platforms" aria-labelledby="platforms-title">
+              <div>
+                <dt>Windows</dt>
+                <dd>Ready-made build.</dd>
+              </div>
+              <div>
+                <dt>macOS</dt>
+                <dd>Apple silicon. Signed and notarized by Apple.</dd>
+              </div>
+              <div>
+                <dt>Linux</dt>
+                <dd>Ready-made build.</dd>
+              </div>
+            </dl>
           </div>
-          <ul class="platforms">
-            <li>
-              <h3>Windows</h3>
-              <p>Ready-made alpha build.</p>
-            </li>
-            <li>
-              <h3>macOS</h3>
-              <p>Apple silicon. The build is currently unsigned. The first time, right-click the app and choose Open.</p>
-            </li>
-            <li>
-              <h3>Linux</h3>
-              <p>Ready-made alpha build.</p>
-            </li>
-          </ul>
-        </section>
 
-        <section class="section buy" id="buy" aria-labelledby="buy-title">
-          <div class="copy">
-            <p class="eyebrow">08 / Early access</p>
+          <div class="offer" id="buy">
+            <p class="eyebrow">09 / Early access</p>
             <h2 id="buy-title">Buy the alpha</h2>
-            <p>
-              $15 during alpha and early access. Updates through 1.0 are included. The price goes up at beta, and again at 1.0.
-            </p>
-            <p>Alpha software can still have bugs.</p>
-          </div>
-          <div class="offer">
             <p class="price">$15</p>
+            <p class="offer-lede">Alpha and early access. Updates through 1.0 are included.</p>
             <a class="button primary" href="https://mattiaslind.gumroad.com/l/mpainter">
               Buy the alpha <span aria-hidden="true">↗</span>
             </a>
             <p class="host mono">mattiaslind.gumroad.com/l/mpainter</p>
+            <p class="offer-note">The price goes up at beta, and again at 1.0. This is alpha software, so expect some bugs.</p>
           </div>
         </section>
       </main>
