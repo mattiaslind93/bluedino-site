@@ -1,0 +1,1090 @@
+/* Mattias Tech Design — editorial product page.
+   Palette, type, spacing, and motion from tokens.json / web.css. */
+
+:root {
+  color-scheme: dark;
+  --canvas: #090a0b;
+  --surface: #111315;
+  --raised: #1b1e21;
+  --text: #f2f4f5;
+  --secondary: #b4bac1;
+  --muted: #8b949e;
+  --line: #2a2f34;
+  --control: #717b86;
+  --focus: #c8d2dc;
+  --primary: #f2f4f5;
+  --on-primary: #090a0b;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --ease-enter: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --gutter: 32px;
+  --section: 96px;
+  --radius-media: 10px;
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--canvas);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  overflow-x: clip;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+  transition: color 120ms var(--ease);
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+}
+
+::selection {
+  color: var(--canvas);
+  background: var(--text);
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+ul,
+ol,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text);
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 450;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 550;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+p,
+dd {
+  color: var(--secondary);
+  font-size: 16px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.page {
+  max-width: 1328px;
+  margin-inline: auto;
+  padding-inline: 64px;
+}
+
+.eyebrow {
+  font: 12px/1.5 var(--mono);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.mono {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 24px;
+  z-index: 5;
+  padding: 12px 16px;
+  background: var(--text);
+  color: var(--canvas);
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 80px;
+  border-bottom: 1px solid var(--line);
+}
+
+.studio {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  min-height: 44px;
+  padding: 8px 12px;
+  background: #f4f5f6;
+  border-radius: 6px;
+}
+
+.studio img {
+  width: 76px;
+}
+
+.studio:hover {
+  background: #e9ecef;
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 28px;
+  margin-left: auto;
+}
+
+.site-header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--secondary);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.site-header nav a:hover {
+  color: var(--text);
+}
+
+/* ---------- Shared pieces ---------- */
+
+.frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-media);
+  background: var(--surface);
+}
+
+.frame img {
+  width: 100%;
+}
+
+figcaption {
+  max-width: 42em;
+  padding-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.section {
+  padding-block: var(--section);
+  border-top: 1px solid var(--line);
+}
+
+.section-head {
+  max-width: 38rem;
+}
+
+.section-head.wide {
+  max-width: 44rem;
+}
+
+.section-head .eyebrow,
+.copy > .eyebrow,
+.presets-head .eyebrow,
+.platforms-block > .eyebrow,
+.offer > .eyebrow {
+  margin-bottom: 16px;
+}
+
+.section-head h2,
+.copy h2 {
+  margin-bottom: 16px;
+}
+
+.copy p,
+.section-head p {
+  max-width: 36rem;
+}
+
+.copy p + p {
+  margin-top: 16px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 44px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color 120ms var(--ease), transform 80ms var(--ease);
+}
+
+.button.primary {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.button.primary:hover {
+  background: #d9dde1;
+  color: var(--on-primary);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 15px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  padding: 72px 0 var(--section);
+}
+
+.hero-head {
+  grid-column: 1 / span 7;
+}
+
+.lockup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.wordmark {
+  width: min(200px, 56vw);
+}
+
+.hero-body {
+  grid-column: 9 / -1;
+  align-self: end;
+}
+
+.lede {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.hero-point {
+  margin-top: 12px;
+}
+
+.hero-body .actions {
+  margin-top: 28px;
+}
+
+.price-note {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.hero-art {
+  grid-column: 1 / -1;
+  margin-top: 64px;
+}
+
+/* Annotations aligned to the panels in the lead screenshot:
+   assets (left), 3D view (center), layer stack (right). */
+.annotations {
+  display: grid;
+  grid-template-columns: 18fr 66fr 16fr;
+  max-width: none;
+  padding-top: 0;
+}
+
+.annotations p {
+  padding: 12px 12px 0 0;
+  border-left: 1px solid var(--control);
+  padding-left: 12px;
+  margin-top: 12px;
+  color: var(--secondary);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.annotations .eyebrow {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Render/resolve signature: one decorative, offset slice of the hero
+   image appears once and settles in 140 ms. The real image underneath
+   is visible from the first paint and never waits for this. */
+.resolve::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: url("./assets/2026-11-05-spider-viewport-layers.png") var(--hero-pos, 50% 50%) / cover no-repeat;
+  clip-path: inset(46% 0 49% 0);
+  opacity: 0;
+  animation: resolve 140ms var(--ease-enter) 200ms forwards;
+}
+
+@keyframes resolve {
+  0% {
+    opacity: 0.32;
+    transform: translateX(2px);
+  }
+  55% {
+    opacity: 0.16;
+    transform: translateX(-1px);
+  }
+  100% {
+    opacity: 0;
+    transform: none;
+  }
+}
+
+/* ---------- 01 Paint ---------- */
+
+.paint-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  margin-top: 56px;
+}
+
+.paint-main {
+  grid-column: 1 / span 8;
+}
+
+.paint-detail {
+  grid-column: 9 / -1;
+  margin-top: 96px;
+}
+
+.crop {
+  aspect-ratio: 4 / 5;
+}
+
+.crop img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.crop-face img {
+  object-position: 52% 50%;
+}
+
+/* ---------- 02 Layers ---------- */
+
+.layers-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  align-items: center;
+}
+
+.layers-grid .copy {
+  grid-column: 1 / span 5;
+}
+
+.layers-art {
+  grid-column: 7 / -1;
+}
+
+.crop-stack {
+  aspect-ratio: 1 / 1;
+}
+
+.crop-stack img {
+  object-position: 100% 0;
+  transform: scale(1.5);
+  transform-origin: 100% 0;
+}
+
+.facts {
+  margin-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.facts div {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  gap: 16px;
+  padding-block: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.facts dt {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 550;
+  line-height: 1.6;
+}
+
+.facts dd {
+  font-size: 15px;
+}
+
+/* ---------- 03 Material Presets ---------- */
+
+.presets {
+  position: relative;
+  border-top: 0;
+  background: var(--surface);
+  box-shadow: 0 0 0 100vmax var(--surface);
+  clip-path: inset(0 -100vmax);
+}
+
+.presets + .section {
+  border-top: 0;
+}
+
+.presets-head {
+  max-width: 62rem;
+}
+
+.statement {
+  font-size: clamp(32px, 4.6vw, 60px);
+  font-weight: 450;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+
+.presets-body {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  margin-top: 64px;
+}
+
+.presets-body .copy {
+  grid-column: 1 / span 5;
+}
+
+.presets-body .copy p:first-child {
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.flow,
+.flow-return {
+  grid-column: 7 / -1;
+}
+
+/* A small node graph with real meaning: each step leads to the next. */
+.flow {
+  position: relative;
+  list-style: none;
+  padding: 0;
+}
+
+.flow::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 6px;
+  width: 1px;
+  background: var(--control);
+}
+
+.flow li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  column-gap: 16px;
+  align-items: baseline;
+  padding: 0 0 32px 40px;
+}
+
+.flow li:last-child {
+  padding-bottom: 0;
+}
+
+.flow .node {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 13px;
+  height: 13px;
+  border: 1px solid var(--text);
+  border-radius: 50%;
+  background: var(--surface);
+}
+
+.flow li:nth-child(2) .node {
+  background: var(--text);
+}
+
+.flow strong {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+.flow .note {
+  grid-column: 2;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.flow-return {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--secondary);
+  font-size: 15px;
+}
+
+/* ---------- 04 Mask Generators ---------- */
+
+.generators-art {
+  margin-top: 56px;
+}
+
+.generators {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--gutter);
+  list-style: none;
+  margin-top: 48px;
+  padding: 0;
+}
+
+.generators li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 16px;
+  border-top: 1px solid var(--control);
+}
+
+.generators strong {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+.generators span:last-child {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ---------- 05–06 Supporting ---------- */
+
+.support {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  align-items: start;
+  padding-block: 64px;
+}
+
+.support-art {
+  grid-column: 1 / span 7;
+}
+
+.support-list {
+  grid-column: 9 / -1;
+}
+
+.support-list article {
+  padding-bottom: 28px;
+}
+
+.support-list article + article {
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.support-list .eyebrow {
+  margin-bottom: 12px;
+}
+
+.support-list h3 {
+  margin-bottom: 8px;
+}
+
+/* ---------- 07 Source ---------- */
+
+.source {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  padding-block: 64px;
+}
+
+.source > .eyebrow {
+  grid-column: 1 / span 4;
+  padding-top: 10px;
+}
+
+.source .copy {
+  grid-column: 5 / -1;
+}
+
+.source .text-link {
+  margin-top: 12px;
+}
+
+/* ---------- 08–09 Platforms + buy ---------- */
+
+.closing {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  align-items: start;
+}
+
+.platforms-block {
+  grid-column: 1 / span 7;
+}
+
+.version {
+  margin-top: 12px;
+  color: var(--text);
+}
+
+.platforms {
+  margin-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.platforms div {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  gap: 16px;
+  padding-block: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.platforms dt {
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 550;
+  line-height: 1.5;
+}
+
+.platforms dd {
+  line-height: 1.5;
+}
+
+.offer {
+  grid-column: 9 / -1;
+  padding-left: 40px;
+  border-left: 1px solid var(--line);
+}
+
+.offer h2 {
+  font-size: 20px;
+  letter-spacing: -0.015em;
+}
+
+.price {
+  margin-top: 20px;
+  color: var(--text);
+  font-size: clamp(64px, 8vw, 96px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.offer-lede {
+  margin-top: 16px;
+  color: var(--text);
+}
+
+.offer .button {
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 28px;
+}
+
+.host {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.offer-note {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0 32px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--text);
+}
+
+/* ---------- Medium ---------- */
+
+@media (max-width: 1024px) {
+  :root {
+    --gutter: 24px;
+    --section: 80px;
+  }
+
+  .page {
+    padding-inline: 40px;
+  }
+
+  .hero-head,
+  .hero-body {
+    grid-column: 1 / -1;
+  }
+
+  .hero-body {
+    max-width: 38rem;
+    margin-top: 32px;
+  }
+
+  .hero-art {
+    margin-top: 48px;
+  }
+
+  .layers-grid .copy {
+    grid-column: 1 / span 6;
+  }
+
+  .presets-body .copy,
+  .flow,
+  .flow-return {
+    grid-column: 1 / -1;
+  }
+
+  .presets-body .copy {
+    max-width: 38rem;
+    margin-bottom: 48px;
+  }
+
+  .generators {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 32px;
+  }
+
+  .support-art,
+  .support-list {
+    grid-column: 1 / -1;
+  }
+
+  .support-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gutter);
+    margin-top: 40px;
+  }
+
+  .support-list article,
+  .support-list article + article {
+    padding: 20px 0 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .source > .eyebrow,
+  .source .copy {
+    grid-column: 1 / -1;
+  }
+
+  .source > .eyebrow {
+    padding-top: 0;
+    margin-bottom: 16px;
+  }
+
+  .platforms-block,
+  .offer {
+    grid-column: 1 / -1;
+  }
+
+  .offer {
+    max-width: 30rem;
+    margin-top: 56px;
+    padding: 40px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}
+
+/* ---------- Narrow ---------- */
+
+@media (max-width: 760px) {
+  .paint-main,
+  .paint-detail,
+  .layers-grid .copy,
+  .layers-art {
+    grid-column: 1 / -1;
+  }
+
+  .paint-detail {
+    margin-top: 32px;
+    width: 72%;
+    justify-self: end;
+  }
+
+  .layers-art {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: 16px;
+    --section: 64px;
+  }
+
+  .page {
+    padding-inline: 20px;
+  }
+
+  .site-header {
+    flex-wrap: wrap;
+    padding-block: 16px 4px;
+    gap: 8px 16px;
+  }
+
+  .studio {
+    width: 84px;
+  }
+
+  .studio img {
+    width: 60px;
+  }
+
+  .draft-label {
+    margin-left: auto;
+  }
+
+  .site-header nav {
+    width: 100%;
+    gap: 0 20px;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+
+  .lockup {
+    margin-bottom: 28px;
+  }
+
+  .lede {
+    font-size: 18px;
+  }
+
+  /* On a phone the full UI is too small to read; frame the 3D view. */
+  .hero .frame {
+    --hero-pos: 46% 50%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero .frame img {
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--hero-pos);
+  }
+
+  .annotations {
+    grid-template-columns: 1fr;
+  }
+
+  .annotations p {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    margin-top: 0;
+    padding: 10px 0;
+    border-left: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .annotations .eyebrow {
+    flex: 0 0 5.5rem;
+    margin: 0;
+  }
+
+  .paint-grid,
+  .generators-art {
+    margin-top: 40px;
+  }
+
+  .paint-detail {
+    width: 100%;
+  }
+
+  .paint-detail .crop {
+    aspect-ratio: 4 / 3;
+  }
+
+  .facts div,
+  .platforms div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .presets-body {
+    margin-top: 40px;
+  }
+
+  .flow li {
+    grid-template-columns: 1fr;
+    padding-left: 32px;
+  }
+
+  .flow .note {
+    grid-column: 1;
+  }
+
+  .generators {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .support,
+  .source {
+    padding-block: 56px;
+  }
+
+  .support-list {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .offer {
+    max-width: none;
+  }
+
+  .site-footer {
+    flex-wrap: wrap;
+    gap: 0 24px;
+  }
+
+  .site-footer > span {
+    order: 3;
+    width: 100%;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .resolve::after {
+    content: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
