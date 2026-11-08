@@ -166,7 +166,7 @@
           <div class="section-head reveal">
             <p class="eyebrow">The foundation</p>
             <h2>Layers on top.<br />Nodes underneath.</h2>
-            <p class="section-lede">A layer stack is the right way to texture. A node graph is the right way to build the thing nobody thought of yet. You get the first without giving up the second — because what you paint is written as Blender shader nodes, in a Blender file, on top of Blender's own code.</p>
+            <p class="section-lede">A layer stack is the right way to texture. A node graph is the right way to build the thing nobody thought of yet. You get the first without giving up the second, because the file you save is a Blender file, the masks you build come out as Blender node groups, and the engine underneath is Blender's own code.</p>
           </div>
 
           <figure class="ph reveal" style="--ph-ratio: 2.1">
@@ -179,12 +179,12 @@
 
           <div class="pillars">
             <article class="pillar reveal">
-              <h3>Open it up and keep going</h3>
-              <p>Export a mask or a material preset and it arrives in Blender as a connected shader graph, wired to the same baked mesh maps mPainter uses. Retune it, send it back, carry on painting. Rewire it into something new and it returns as a bake instead — the exporter tells you which one you are getting rather than quietly dropping half your graph.</p>
+              <h3>The project is a Blender file</h3>
+              <p>Save, and you have a&nbsp;<code>.blend</code>. Open it in Blender, inspect it, render it, put it in the same pipeline as everything else you make. There is no export step to get your work out and no container only one program can read, so there is nothing to be locked out of in five years.</p>
             </article>
             <article class="pillar reveal">
-              <h3>A Blender scene comes with it</h3>
-              <p>Ships with the app: the shader ball, its packed mesh maps, all ten mask generators as node groups, and a worked two-layer example. It is the workbench for building your own smart materials and masks so they read mPainter's bakes the way the built-in ones do. Nothing runs when you open it.</p>
+              <h3>The bridge is open on the table</h3>
+              <p>Masks and material presets travel out to Blender as connected node groups, wired to the same baked mesh maps mPainter uses, and come back in. Retune the values and they round-trip exactly; rewire the graph into something else and it returns as a bake. Straight talk: today that bridge is a command-line tool you build from source, not a button in the app.</p>
             </article>
             <article class="pillar reveal">
               <h3>The library already exists</h3>
@@ -238,19 +238,19 @@
               <figure class="card-shot ph ph-flat" style="--ph-ratio: 4/3">
                 <div class="ph-inner">
                   <span class="ph-tag">Image to come</span>
-                  <p class="ph-what">The bundled scene open in stock Blender: the ten mask generator node groups in the Shader Editor, shader ball in the viewport.</p>
+                  <p class="ph-what">The bridge scene open in stock Blender: the ten mask generator node groups in the Shader Editor, shader ball in the viewport.</p>
                   <p class="ph-spec">1600 × 1200 · JPEG</p>
                 </div>
               </figure>
               <div class="card-body">
-                <h3>The bridge scene, in the box</h3>
-                <p><code>Shader_Ball_JL_01-mPainter.blend</code> ships with the app: mesh, UVs, packed mesh maps, ten mask generators as node groups and a worked example to build your own from.</p>
+                <h3>A Blender scene to build from</h3>
+                <p><code>Shader_Ball_JL_01-mPainter.blend</code> is in the repository: mesh, UVs, packed mesh maps, all ten mask generators as node groups and a worked two-layer example. It is where you author your own smart materials and masks so they read the mesh maps the way the built-in ones do. Free to take whether or not you ever buy anything.</p>
               </div>
             </article>
 
             <article class="card reveal">
               <h3>In and out of everything</h3>
-              <p>Import OBJ, FBX, Alembic, USD and glTF. Export your maps to PNG and EXR for your engine, renderer or DCC. Bitmap brushes, normal map import and 32-bit float height EXR come along too.</p>
+              <p>Import OBJ, FBX, Alembic, USD and glTF. Export your maps to PNG and EXR for your engine, renderer or DCC. Bitmap brushes, normal map import and float height EXR import, tested up to 8K, come along too.</p>
             </article>
 
             <article class="card reveal">
