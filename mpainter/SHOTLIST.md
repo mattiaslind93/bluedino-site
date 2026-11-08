@@ -1,9 +1,13 @@
 # Image shot list — bluedino.se/mpainter
 
-Every picture on the page right now is a **frame pulled out of the launch demo video**
-(`mPainter/docs/marketing/2026-11-06-mpainter-launch.mp4`). They are real screenshots, so the
-page is honest and presentable today — but they are video-compressed, framed for video, and
-carry the watermark bar. Swapping them for clean captures is the biggest visual upgrade left.
+**Three of the five pictures are now clean captures** — the spider shots carry feature 01 and
+feature 02, and the UV shot carries the texture sets card. They came from the screenshots added
+in `cursor/mpainter-preview-3be1`.
+
+**Two are still frames pulled out of the launch demo video**
+(`mPainter/docs/marketing/2026-11-06-mpainter-launch.mp4`): the materials shot and the bake
+shot, plus the video poster. They are real screenshots, so the page is honest today — but they
+are video-compressed and framed for video. Those two, and a beauty render, are what is left.
 
 **General rules for every capture**
 
@@ -36,38 +40,47 @@ ffmpeg -ss 73 -i launch.mp4 -frames:v 1 -vf scale=1600:-2 -q:v 3 demo-poster.jpg
 
 ---
 
-## 2. `assets/shots/layers.jpg` — "Every decision stays editable"
+## 2. `assets/shots/stack.jpg` — "Every decision stays editable" — **done**
 
 | | |
 |---|---|
 | **Where** | Feature 01, image on the right. |
-| **Size** | 2400 × 1272 (displays at ~700 px wide) |
-| **Now** | Frame at 1:13 — 13-layer stack beside the red hydrant. |
+| **Size** | 2000 × 1066 |
+| **Now** | The spider on the rusted blade, with brushed iron and coarse rust folders open. |
 
-**Must be visible:** a genuinely deep stack — folders, fill layers, paint layers, several
-different blend modes, opacities that are not all 100. That stack is the whole argument of the
-section, so it should look like a day's work, not a demo file. The model should be visibly
-finished. Crop out the watermark bar.
+This one works: folders, mixed blend modes, opacities that are not all 100, and a model that
+looks like finished work. Nothing to do unless you want a different subject.
 
 ---
 
-## 3. `assets/shots/masks.jpg` — "Let the model do the aging"
+## 3. `assets/shots/wear.jpg` — "Let the model do the aging" — **good enough**
 
 | | |
 |---|---|
 | **Where** | Feature 02, image on the left. |
-| **Size** | 2400 × 1272 |
-| **Now** | Frame at 0:30 — mask generator grid, weathered hydrant, Levels panel. |
+| **Size** | 2000 × 1066 |
+| **Now** | The spider close up, grunge edge wear and rust spot generators stacked in the list. |
 
-**Must be visible:** the mask generator thumbnails in the Assets panel (all ten readable) *and* a
-model that clearly shows generated wear — scuffed edges, dirt in the cavities, streaks running
-down. If one generator is selected and its parameters are open in Properties, even better: it
-shows this is art-directable, not a one-click filter.
+The wear on the model is clearly generated rather than hand-painted, which is the argument.
 
-**Worth doing instead:** a **before / after pair** at the same camera angle — clean material on
-the left, generators on top on the right. If you make one, save them as
-`masks-before.jpg` / `masks-after.jpg` at 1200 × 1272 each and I will build the split into the
-page.
+**Would be better:** a **before / after pair** at the same camera angle — clean material on the
+left, generators on top on the right. Save them as `masks-before.jpg` / `masks-after.jpg` at
+1200 × 1272 each and I will build the split into the page.
+
+---
+
+## 3b. `assets/shots/uv-sets.jpg` — "Texture sets, UDIMs and a UV view" — **done**
+
+| | |
+|---|---|
+| **Where** | Wide card in the "And there's more" grid. |
+| **Size** | 1700 × 1054 |
+| **Now** | The character split between the 3D viewport and the UV view. |
+
+One thing to decide: the model in this shot — and in `2026-11-06-viewport-character-*.png` — is
+a recognisable film character. It is fine as a work-in-progress screenshot; it is a different
+thing on a page selling a product. If the sculpt is not yours to show, swap it for the spider or
+anything of your own and tell me which file to use.
 
 ---
 
@@ -137,10 +150,12 @@ small size. If you want it to carry the new headline, the text to use is:
 
 ## Unused files left in place
 
-`assets/placeholders/screenshot-layer-stack.png` and `assets/placeholders/video-demo-poster.png`
-are from the old draft and nothing links to them any more. `assets/preview-dark.png` (the
-wordmark) is also unused now — the header uses the app icon instead. Nothing has been deleted;
-remove them yourself whenever you are sure.
+`assets/placeholders/screenshot-layer-stack.png`, `assets/placeholders/video-demo-poster.png`,
+`assets/preview-dark.png` and `assets/wordmark.png` are not linked from the page any more — the
+header uses the app icon. `assets/shots/layers.jpg`, `assets/shots/masks.jpg` are the video
+frames the spider shots replaced. The five full-size `2026-11-*.png` captures (about 17 MB
+together) are kept as the originals the web-sized JPEGs were made from. Nothing has been
+deleted; remove them yourself whenever you are sure.
 
 `assets/shots/paint.jpg` is a spare frame (0:26 — flat red fill layer with the colour ramp open).
 Nothing links to it; it is there in case you want a "painting" image in one of the cards.
