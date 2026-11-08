@@ -524,6 +524,9 @@ p { color: var(--secondary); }
 .card-wide .card-shot img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .card-wide .card-body { flex: 1 1 44%; padding: 30px clamp(24px, 3vw, 40px) 30px 0; display: grid; gap: 12px; }
 
+.card-half { grid-column: span 2; }
+.card-half .card-shot { flex: 1 1 52%; }
+
 .card-accent { border-color: rgba(95, 207, 208, 0.22); background: linear-gradient(170deg, rgba(95, 207, 208, 0.07), rgba(95, 207, 208, 0) 62%), var(--surface); }
 
 /* ── Honest / status ────────────────────────────────────────────────── */
@@ -734,7 +737,7 @@ details p a { color: var(--accent); }
   .player-play svg { width: 24px; height: 24px; padding: 17px; }
   .trust, .platforms, .flow, .stats { grid-template-columns: 1fr; }
   .cards { grid-template-columns: 1fr; }
-  .card-wide { grid-column: span 1; }
+  .card-wide, .card-half { grid-column: span 1; }
   .ticks li { font-size: 15px; }
   details p { padding-right: 0; }
   summary { padding-right: 34px; }
