@@ -1,5 +1,58 @@
 # Image shot list — bluedino.se/mpainter
 
+## Grey boxes on the live page
+
+Three slots on the page are **grey placeholder boxes right now**, visible to anyone who
+visits. They are marked "Image to come" and say what belongs in them. These are the
+priority: every other item below is an upgrade, these are gaps.
+
+### A. The layer stack beside the node graph
+
+| | |
+|---|---|
+| **Where** | "Layers on top. Nodes underneath." Full width, right under the headline. |
+| **Size** | 2400 x 1140, JPEG |
+
+**The single most important picture on the page**, because it is the one that proves the
+whole argument. The same material, twice, side by side: the mPainter layer stack on the
+left, the exported node graph open in Blender's Shader Editor on the right. Match them so
+a reader can see they are the same thing: the same material name, the same visible
+structure, ideally the same model in both viewports.
+
+Compose it as one image with the two halves at matched heights, or give me two captures at
+1200 x 1140 named `node-mpainter.jpg` and `node-blender.jpg` and I will build the pair with
+a divider between them.
+
+A short screen recording of the round trip would be even stronger than a still: export the
+mask, open it in Blender, change a value, bring it back, carry on painting. If you record
+one, 20 to 30 seconds is plenty and I will put it in this slot instead.
+
+### B. The bundled scene in Blender
+
+| | |
+|---|---|
+| **Where** | "The bridge scene, in the box" card, in the "And there's more" grid. |
+| **Size** | 1600 x 1200, JPEG |
+
+Stock Blender with `Shader_Ball_JL_01-mPainter.blend` open. The Shader Editor should show
+the mask generator node groups laid out so they read as real, connected graphs, with the
+shader ball in the viewport. Make it obvious this is Blender and not mPainter, so the
+contrast with every other picture on the page does the talking.
+
+### C. One finished render
+
+| | |
+|---|---|
+| **Where** | Full-bleed band just above the price. |
+| **Size** | 2800 x 1080 or wider, JPEG |
+
+An asset textured in mPainter, lit and rendered properly. No application window, no panels,
+no UI. This is the only picture on the page that would be the work rather than the tool,
+and the page is visibly missing it. If you have two or three, I will build a strip instead
+of a single band.
+
+---
+
 **Three of the five pictures are now clean captures** — the spider shots carry feature 01 and
 feature 02, and the UV shot carries the texture sets card. They came from the screenshots added
 in `cursor/mpainter-preview-3be1`.

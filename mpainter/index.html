@@ -36,6 +36,7 @@
           <a href="#stack">Layers</a>
           <a href="#wear">Masks</a>
           <a href="#materials">Materials</a>
+          <a href="#foundation">Foundation</a>
           <a href="#more">More</a>
           <a href="#honest">Alpha status</a>
         </nav>
@@ -96,7 +97,7 @@
           <h2 class="reveal">You already know<br />how to do this.</h2>
           <div class="statement-body reveal">
             <p>If you have textured in a professional painting app, mPainter will feel like a room you have worked in before. Paint straight onto the model. Stack layers and masks. Let the generators handle the weathering. The muscle memory carries over, so there is nothing to relearn before you get something finished.</p>
-            <p>Underneath, it is a branch of Blender — not a plugin talking to Blender across a bridge. That is why your node materials walk straight in, and why your project saves as a&nbsp;<code>.blend</code>&nbsp;you can open, inspect and render like any other.</p>
+            <p>Underneath, it is a branch of Blender — not a plugin talking to Blender across a bridge. Your project saves as a&nbsp;<code>.blend</code>&nbsp;you can open, inspect and render like any other file, and the masks and materials you build come back out as real Blender node groups. Nothing you make in here is trapped in&nbsp;here.</p>
           </div>
         </div>
       </section>
@@ -159,7 +160,47 @@
         </div>
       </section>
 
-      <!-- ──────────────────────────── AND MORE ───────────────────────── -->
+            <!-- THE FOUNDATION -->
+      <section class="manifesto" id="foundation">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="eyebrow">The foundation</p>
+            <h2>Layers on top.<br />Nodes underneath.</h2>
+            <p class="section-lede">A layer stack is the right way to texture. A node graph is the right way to build the thing nobody thought of yet. You get the first without giving up the second — because what you paint is written as Blender shader nodes, in a Blender file, on top of Blender's own code.</p>
+          </div>
+
+          <figure class="ph reveal" style="--ph-ratio: 2.1">
+            <div class="ph-inner">
+              <span class="ph-tag">Image to come</span>
+              <p class="ph-what">The same material twice: the mPainter layer stack on the left, the exported node graph open in Blender's Shader Editor on the right.</p>
+              <p class="ph-spec">2400 × 1140 · JPEG</p>
+            </div>
+          </figure>
+
+          <div class="pillars">
+            <article class="pillar reveal">
+              <h3>Open it up and keep going</h3>
+              <p>Export a mask or a material preset and it arrives in Blender as a connected shader graph, wired to the same baked mesh maps mPainter uses. Retune it, send it back, carry on painting. Rewire it into something new and it returns as a bake instead — the exporter tells you which one you are getting rather than quietly dropping half your graph.</p>
+            </article>
+            <article class="pillar reveal">
+              <h3>A Blender scene comes with it</h3>
+              <p>Ships with the app: the shader ball, its packed mesh maps, all ten mask generators as node groups, and a worked two-layer example. It is the workbench for building your own smart materials and masks so they read mPainter's bakes the way the built-in ones do. Nothing runs when you open it.</p>
+            </article>
+            <article class="pillar reveal">
+              <h3>The library already exists</h3>
+              <p>Every CC0 texture set on Poly Haven and ambientCG works on day one, and supported Blender node materials come in as Material Presets. Decades of open-source material work is already sitting there, free, in formats nobody can take away from you. You start with a library instead of a blank page.</p>
+            </article>
+            <article class="pillar reveal">
+              <h3>It keeps up, because it is Blender</h3>
+              <p>Most of what runs underneath is Blender's own code, maintained by a foundation and thousands of contributors. When Blender moves forward, mPainter moves with it. That is what makes a texturing app from one developer something you can plan around for more than a single release.</p>
+            </article>
+          </div>
+
+          <p class="manifesto-close reveal">The good parts were already built. The work was putting them behind one interface an artist can actually use — and then not locking the door on the way out. No subscription. No format only one company can open. No reason your own work should ever stop being yours.</p>
+        </div>
+      </section>
+
+<!-- ──────────────────────────── AND MORE ───────────────────────── -->
       <section class="more" id="more">
         <div class="wrap">
           <div class="section-head reveal">
@@ -191,6 +232,20 @@
             <article class="card reveal">
               <h3>Pre-compose and cache</h3>
               <p>Freeze a heavy folder down to a cached result so a deep stack keeps painting at full speed. Unfreeze it when you need to go back in.</p>
+            </article>
+
+            <article class="card card-wide card-half reveal">
+              <figure class="card-shot ph ph-flat" style="--ph-ratio: 4/3">
+                <div class="ph-inner">
+                  <span class="ph-tag">Image to come</span>
+                  <p class="ph-what">The bundled scene open in stock Blender: the ten mask generator node groups in the Shader Editor, shader ball in the viewport.</p>
+                  <p class="ph-spec">1600 × 1200 · JPEG</p>
+                </div>
+              </figure>
+              <div class="card-body">
+                <h3>The bridge scene, in the box</h3>
+                <p><code>Shader_Ball_JL_01-mPainter.blend</code> ships with the app: mesh, UVs, packed mesh maps, ten mask generators as node groups and a worked example to build your own from.</p>
+              </div>
             </article>
 
             <article class="card reveal">
@@ -261,7 +316,18 @@
         </div>
       </section>
 
-      <!-- ──────────────────────────── BUY ────────────────────────────── -->
+            <!-- BAND -->
+      <section class="band">
+        <figure class="ph ph-band reveal" style="--ph-ratio: 2.6">
+          <div class="ph-inner">
+            <span class="ph-tag">Image to come</span>
+            <p class="ph-what">One finished render. An asset textured in mPainter, lit and rendered properly — no application window, no panels. The only picture on the page that is the work rather than the tool.</p>
+            <p class="ph-spec">2800 × 1080 or wider · JPEG</p>
+          </div>
+        </figure>
+      </section>
+
+<!-- ──────────────────────────── BUY ────────────────────────────── -->
       <section class="buy" id="buy">
         <div class="glow glow-buy" aria-hidden="true"></div>
         <div class="wrap buy-inner">
